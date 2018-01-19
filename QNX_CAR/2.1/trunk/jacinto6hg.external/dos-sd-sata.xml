@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this is based on Deckard's VMware board -->
+<board type="jacinto6hg" cpu="armle-v7" profile="html5" description=""
+       secure="false">
+  <navigator-config use-default="true"/>
+  <navigator-groups use-default="true"/>
+  <navigator-extensions use-default="true"/>
+  <navigator-urls use-default="true"/>
+  <navigator-corp-extensions use-default="true"/>
+  <navigator-corp-urls use-default="true"/>
+  <navigator-wallpaper use-default="true"/>
+  <authman use-default="true"/>
+  <packaging>
+    <ifs bootloader="uboot" name="jacinto6hg.ifs"/>
+    <package name="dosfs" install_path="/dos">
+	<include-fileset name="dosfs.jacinto6hg.boot"/>
+    </package>
+  </packaging>
+</board>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileset name="basefs.jacinto6hg.dvfs">
+  <file name="bin/dvfsmgr-j6" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/dvfs_client" uid="root" gid="nto" mode="0755"/>
+  <directory name="etc/dvfs/" uid="root" gid="nto" mode="0755"/>
+  <directory name="etc/dvfs/config" uid="root" gid="nto" mode="0755"/>
+  <directory name="etc/dvfs/config/j6" uid="root" gid="nto" mode="0755"/>
+  <file name="etc/dvfs/config/j6/dvfs_j6.conf" uid="root" gid="nto" mode="0755"/>
+</fileset>

@@ -1,0 +1,10 @@
+@air_control
+airConditioning_all:n:0
+airRecirculation_all:n:0
+cmd:n:0
+defrost_all:n:0
+fanDirection_row1left:n:02
+fanSpeed_row1left:n:02
+onoff:n:0
+temperature_row1left:n:08
+temperature_row1right:n:08

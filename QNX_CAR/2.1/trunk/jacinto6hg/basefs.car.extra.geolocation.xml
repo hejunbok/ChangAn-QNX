@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileset name="basefs.jacinto6hg.geolocation">
+
+  <file name="bin/io-locp" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/location_manager" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/location_pps_defaults" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/devlp-ipp.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/devlp-skel.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libgeolocconfig.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libgeolocevent.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libgeolocmsg.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libgeolocnotify.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libgeolocos.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libiolocp.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libwmm.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/socketgps.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/liblocation_manager.so.1" uid="root" gid="nto" mode="0755"/>
+  
+</fileset>

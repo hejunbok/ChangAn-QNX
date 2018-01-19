@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileset name="basefs.jacinto6hg.video">
+  <!-- IPC ( called syslink earlier) -->
+  <file name="ti/jacinto6/bin/ipc" dest="bin/ipc" uid="root" gid="nto" mode="0755"/>
+  <file name="ti/jacinto6/bin/ipc_trace_daemon" dest="bin/ipc_trace_daemon" uid="root" gid="nto" mode="0755"/>
+  <file name="ti/jacinto6/bin/shmemallocator" dest="bin/shmemallocator" uid="root" gid="nto" mode="0755"/>
+  <symlink name="usr/lib/libipc_client.so" target="libipc_client.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="ti/jacinto6/usr/lib/libipc_client.so.1" dest="usr/lib/libipc_client.so.1" uid="root" gid="nto" mode="0755"/>
+  <symlink name="usr/lib/libmmrpc.so" target="libmmrpc.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="ti/jacinto6/usr/lib/libmmrpc.so.1" dest="usr/lib/libmmrpc.so.1" uid="root" gid="nto" mode="0755"/>
+  <symlink name="usr/lib/libsharedmemallocator.so" target="libsharedmemallocator.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="ti/jacinto6/usr/lib/libsharedmemallocator.so.1" dest="usr/lib/libsharedmemallocator.so.1" uid="root" gid="nto" mode="0755"/>
+  <!-- Tiler -->
+  <file name="ti/jacinto6/bin/tiler" dest="bin/tiler" uid="root" gid="nto" mode="0755"/>
+  <file name="ti/jacinto6/lib/dll/tiler_pat.so" dest="lib/dll/tiler_pat.so" uid="root" gid="nto" mode="0755"/>
+  <symlink name="usr/lib/libtilerusr.so" target="libtilerusr.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="ti/jacinto6/usr/lib/libtilerusr.so.1" dest="usr/lib/libtilerusr.so.1" uid="root" gid="nto" mode="0755"/>
+  <!-- DCE -->
+  <symlink name="usr/lib/libdce.so" target="libdce.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="ti/jacinto6/usr/lib/libdce.so.1" dest="usr/lib/libdce.so.1" uid="root" gid="nto" mode="0755"/>
+  <symlink name="usr/lib/libmemmgr.so" target="libmemmgr.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="ti/jacinto6/usr/lib/libmemmgr.so.1" dest="usr/lib/libmemmgr.so.1" uid="root" gid="nto" mode="0755"/>
+  <symlink name="usr/lib/libmemmgr_utils.so" target="libmemmgr_utils.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="ti/jacinto6/usr/lib/libmemmgr_utils.so.1" dest="usr/lib/libmemmgr_utils.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/mmedia/qnx_raac_decoder.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/mmedia/link_writer.so" uid="root" gid="nto" mode="0755"/>
+  
+  <!-- QNX IVAHD video decoder -->
+  <file name="lib/dll/mmedia/ivahd_video_decoder-jacinto6.so" dest="lib/dll/mmedia/ivahd_video_decoder-jacinto6.so" uid="root" gid="nto" mode="0755"/>
+
+  <!-- Firmware for Video -->
+  <file name="ti/jacinto6/lib/firmware/ipu2/dra7xx-m4-ipu2.xem4" dest="lib/firmware/ipu2/dra7xx-m4-ipu2.xem4" uid="root" gid="nto" mode="0755"/>
+</fileset>

@@ -1,0 +1,28 @@
+[+script] .script = {
+    #Don't wait longer than 4 here, or else the scripts in run-early.build will timeout waiting for 
+    # the disk (or else extend the waitfor's there if we need to wait longer than 4s here)
+    waitfor /dev/screen 4
+    waitfor /dev/i2c3
+
+    # *** Camera requires both (2) switches on SW2 on JAMR3 board to be in the OFF position
+    # Lowering the priority of rearview-camera prevents the issue where the launch of camera causes the board to freeze
+    rearview-camera -zorder=-1 -parent-zorder=-1 -pipeline=2 -format=yuy2 -size=1280x800 -bsize=720x240 -csize=720x240 -ddr-clk=384 -source=0 -device=0 &
+
+    /proc/boot/timestamp "REARVIEW CAMERA DONE" &
+}
+
+### Libraries
+[perms=0755]
+libcapture-board-j6-evm.so
+libcapture-soc-j6.so
+libcapture-decoder-tvp5158.so
+[type=link] libcapture-board-j6-no-decoder.so=libcapture-board-j6-no-decoder.so.1
+libcapture-board-j6-no-decoder.so.1
+[type=link] libcapture.so=libcapture.so.1
+[type=link] /proc/boot/libcapture.so.1=/proc/boot/libcapture-board-j6-evm.so
+
+# Executables
+[data=c perms=0755]
+rearview-camera
+isendrecv
+#eof

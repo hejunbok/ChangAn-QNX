@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this is based on Deckard's VMware board -->
+<board type="jacinto6hg" cpu="armle-v7" profile="html5" description=""
+       secure="false">
+  <navigator-config use-default="true"/>
+  <navigator-groups use-default="true"/>
+  <navigator-extensions use-default="true"/>
+  <navigator-urls use-default="true"/>
+  <navigator-corp-extensions use-default="true"/>
+  <navigator-corp-urls use-default="true"/>
+  <navigator-wallpaper use-default="true"/>
+  <authman use-default="true"/>
+  <packaging>
+    <ifs bootloader="uboot" name="jacinto6hg.ifs"/>
+    <package name="basefs" install_path="/base">
+      <include-fileset name="basefs.jacinto6hg"/>
+      <include-fileset name="basefs.car.common"/>
+      <include-fileset name="basefs.car.multimedia"/>
+      <include-fileset name="basefs.car.util"/>
+      <include-fileset name="basefs.common.acoustic"/>
+      <include-fileset name="basefs.common.debug.os"/>
+      <include-fileset name="basefs.common.developer.networking"/>
+      <include-fileset name="basefs.common.developer.scripts"/>
+      <include-fileset name="basefs.common.directories"/>
+      <include-fileset name="basefs.common.etc"/>
+      <include-fileset name="basefs.car.html5"/>
+      <include-fileset name="basefs.car.inputservice"/>
+      <include-fileset name="basefs.html5.common"/>
+      <include-fileset name="basefs.html5.common.torch.webkit"/>
+      <include-fileset name="basefs.html5.common.webinspector"/>
+      <include-fileset name="basefs.hmi.html5.jquerymobile"/>
+      <include-fileset name="basefs.common.acoustic"/>
+      <include-fileset name="basefs.common.asr.generic"/>
+      <include-fileset name="basefs.common.asr.vocon"/>
+      <include-fileset name="basefs.common.os"/>
+      <include-fileset name="basefs.common.os.launcher"/>
+      <include-fileset name="basefs.common.scripts"/>
+      <include-fileset name="basefs.common.webkit"/>
+      <include-fileset name="basefs.common.weblauncher"/>
+      <include-fileset name="basefs.common.dlna"/>
+      <include-fileset name="basefs.hmi.html5.sencha2"/>
+      <include-fileset name="basefs.hmi.html5.debug_packages"/>
+      <include-fileset name="basefs.fonts.common"/>
+      <include-fileset name="basefs.car.realvnc"/>
+      <include-fileset name="basefs.car.wifi"/>
+      <include-fileset name="basefs.mm.sw"/>
+      <include-fileset name="basefs.mm.aac"/>
+      <include-fileset name="basefs.car.bluetooth"/>
+      <include-fileset name="basefs.car.geolocation"/>
+      <include-fileset name="basefs.common.appinst-mgr"/>
+      <include-fileset name="basefs.car.hmi-notification-mgr"/>
+      <include-fileset name="basefs.car.qt"/>
+
+      <!-- PLATFORM-SPECIFIC COMMON FILESETS -->
+      <include-fileset name="basefs.jacinto6hg.video"/>
+      <include-fileset name="basefs.jacinto6hg.wireless"/>
+      <include-fileset name="basefs.jacinto6hg.dvfs"/>
+
+      <!-- VARIANT-SPECIFIC FILESETS -->
+
+      <!-- APK runtime -->
+      <include-fileset name="basefs.common.os.apkruntime"/>
+
+      <!-- EXTRA PACKAGES -->
+      <include-fileset name="basefs.car.extra.bluetooth"/>
+      <include-fileset name="basefs.mm.extra.ipod"/>
+      <include-fileset name="basefs.mm.extra.wma9"/>
+      <include-fileset name="basefs.car.navigation_sample"/>
+      <include-fileset name="basefs.car.ebnav"/>
+
+      <!-- EXTRA PACKAGES -->
+      <include-fileset name="basefs.car.extra.carplay"/>
+      <include-fileset name="basefs.car.extra.geolocation"/>
+    </package>
+
+
+    <package name="rootfs" install_path="/">
+      <include-fileset name="rootfs.jacinto6hg"/>
+      <include-fileset name="rootfs.car.common"/>
+      <include-fileset name="rootfs.car.html5"/>
+      <include-fileset name="rootfs.common.accounts"/>
+      <include-fileset name="rootfs.common.asr.vocon"/>
+      <include-fileset name="rootfs.common.certificates"/>
+      <include-fileset name="rootfs.common.directories"/>
+      <include-fileset name="rootfs.common.etc"/>
+      <include-fileset name="rootfs.common.os"/>
+      <include-fileset name="rootfs.common.pps"/>
+      <include-fileset name="rootfs.car.pps"/>
+      <include-fileset name="rootfs.car.media"/>
+      <include-fileset name="rootfs.common.dlna"/>
+      <include-fileset name="rootfs.car.wifi"/>
+      <include-fileset name="rootfs.car.geolocation"/>
+      <include-fileset name="rootfs.car.qt"/>
+      <!-- PLATFORM-SPECIFIC COMMON FILESETS -->
+
+      <!-- VARIANT-SPECIFIC FILESETS -->
+
+      <!-- NAVIGATION PACKAGES -->
+      <include-fileset name="rootfs.car.navigation_sample"/>
+      <include-fileset name="rootfs.car.ebnav"/>
+    </package>
+
+    <!-- Make sure you added application entry in boards/deployment/share/application.xml as well -->
+
+    <applications>
+      <!-- 3rdParty Applications -->
+      <include-application name="eventseekr.bar" secure="unsigned" seeded="basefs"/>
+      <include-application name="HearPlanet.bar" secure="unsigned" seeded="basefs"/>
+      <include-application name="Parkopedia.bar" secure="unsigned" seeded="basefs"/>
+      <include-application name="7Digital.bar" secure="unsigned" seeded="basefs"/> 
+      <include-application name="WeatherNetwork.bar" secure="unsigned" seeded="basefs"/>
+      <include-application name="WeatherNetworkMini.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="Slacker.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="PeaksAndValleys.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="BestParking.bar" secure="unsigned" seeded="basefs"/>
+
+      <!-- Native Applications -->
+      <include-application name="MediaPlayer_mmplayer.cordova.bar" secure="unsigned" seeded="basefs"/>
+      <include-application name="AppSection.bar" secure="unsigned" seeded="basefs"/>
+      <include-application name="Navigation.cordova.bar" secure="unsigned" seeded="basefs"/>
+      <include-application name="Navigator.bar" secure="unsigned" seeded="basefs"/>
+      <include-application name="CarControl.cordova.bar" secure="unsigned" seeded="basefs"/>
+      <include-application name="Settings.bar" secure="unsigned" seeded="basefs"/>
+      <include-application name="Pandora.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="sys.browser.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="MediaPlayer.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="Status.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="Home.cordova.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="Communication.cordova.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="Shutdown.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="AppPortal.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="HTMLGears.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="RearviewCamera.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="Weather.bar" secure="unsigned" seeded="basefs"/>
+	  <include-application name="TunnelTilt.bar" secure="unsigned" seeded="basefs"/>
+
+      <!-- APK Runtime --> 
+      <include-application name="apkruntime-qnxcar-2-1.bar" secure="unsigned" seeded="basefs"/>
+
+  </applications>
+  </packaging>
+</board>

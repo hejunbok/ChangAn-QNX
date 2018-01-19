@@ -1,0 +1,4 @@
+@application_status
+app::stop
+carplay::stop
+mlink::stop

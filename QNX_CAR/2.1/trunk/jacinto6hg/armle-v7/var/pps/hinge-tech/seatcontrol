@@ -1,0 +1,15 @@
+@seatcontrol
+copilot_heatingstatus:n:0
+copilot_height_movement:n:0
+copilot_lumbar_adjustment:n:0
+copilot_recliner_movement:n:0
+copilot_slide_movement:n:0
+copilot_tilt_movement:n:0
+main_heatingstatus:n:0
+main_height_movement:n:0
+main_lumbar_adjustment:n:0
+main_recliner_movement:n:0
+main_slide_movement:n:0
+main_store_recall_position_cmd:n:0
+main_tilt_movement:n:0
+watch_kind::none

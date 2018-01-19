@@ -1,0 +1,10 @@
+@status
+am:json:{"presets": [880,910,950,1020,1220,1430],"station": 1680}
+artist::Bjork
+fm:json:{"presets": [87.9,89.9,91.4,97.7,105.7,107.7],"station": 107.7}
+genre::News & Entertainment
+hd:b:true
+seek::stop
+song::All is Full of Love
+station::CBC Radio 2
+tuner::fm

@@ -1,0 +1,15 @@
+#Bluetooth Configuration
+
+BT_HAS_BT="yes"
+BT_SRCH_BT_DONGLE="yes"
+
+
+# Include board and variant specific settings last
+if [ -e ${HMIROOT}/scripts/config/bluetooth.${BOARD} ]; then
+	. ${HMIROOT}/scripts/config/bluetooth.${BOARD}
+fi
+
+if [ -e ${HMIROOT}/scripts/config/bluetooth.${BOARD}.${BOARD_CONFIG} ]; then
+	. ${HMIROOT}/scripts/config/bluetooth.${BOARD}.${BOARD_CONFIG}
+fi
+

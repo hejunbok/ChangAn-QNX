@@ -1,0 +1,10 @@
+sys.appworld.testc3lzLmFwcHdvcmxkICAgICA::appworld://
+sys.browser.testc3lzLmJyb3dzZXIgICAgICA::http://,https://,file://
+sys.videoplayer.testcy52aWRlb3BsYXllciAgICA::mov://,videos://
+sys.airtunes.testc3lzLmFpcnR1bmVzICAgICA::music://
+sys.pictures.testc3lzLnBpY3R1cmVzICAgICA::photos://
+sys.camera.testc3lzLmNhbWVyYSAgICAgICA::camera://
+sys.bbbridge.testc3lzLmJiYnJpZGdlICAgICA::http://127.0.0.1:1080,mailto:
+sys.help.c3lzLmhlbHAgICAgICAgICAgICA::help://
+sys.videochat.testc3lzLnZpZGVvY2hhdCAgICA::sip:
+

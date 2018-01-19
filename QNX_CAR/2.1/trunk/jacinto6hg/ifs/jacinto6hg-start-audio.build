@@ -1,0 +1,50 @@
+[+script] .script = {
+	# Seed hardware resources into the Resource database manager
+	resource_seed dma=0,31 &
+
+	#waitfor /dev/i2c3 5
+
+	#######################################################################
+	## AUDIO driver
+	##  - Requires the I2C driver to be enabled
+	##  - Play audio (early_chime)
+	##  - i2c_addr=24 ( for 7inch LCD panel) or i2c_addr=25 ( for 10inch LG LCD panel)
+	#######################################################################
+	# MCASP3
+	#io-audio -d mcasp-j6_aic3106 mcasp=2,i2c_addr=25,i2c_dev=0,cap_name=defaultc,dindex=1,play_name=defaultp &
+	# MCASP1
+	display_msg Starting audio (mcasp1)
+	#io-audio -vvv -d mcasp-j6_dummy mcasp=0,tx_serializer=1,cap_name=defaultc,dindex=1,play_name=defaultp &
+	#io-audio -vvv -d mcasp-j6_dummy mcasp=0,tx_serializer=1,unit=0,dindex=1,play_name=defaultp &
+        io-audio -d mcasp-j6_dummy_mic mcasp=2,clk_mode=slave,cap_name=defaultc,dindex=1,play_name=defaultp & 
+	waitfor /dev/snd/defaultp 5
+        #procmgr_symlink /dev/snd/pcmC0D0p /dev/snd/defaultp 
+        #procmgr_symlink /dev/snd/pcmC0D0c /dev/snd/defaultc 
+	tef6638_init &
+}
+
+[perms=0644] .early_mix_ctl = {
+	# Enable Line In for J6  (line in requires Input Gain to be 0-1%)
+	mix_ctl group "Line In" capture=on > /dev/null
+	# Set volume for early chime  (deva defaults it to 100%)
+	mix_ctl group "PCM Mixer" volume=100% > /dev/null
+	#Enable Line Out for J6
+	mix_ctl switch "Headphone Select"  BOOLEAN  off > /dev/null
+}
+
+# Executables
+[data=c perms=0755]
+i2c-omap35xx-omap4
+isend
+resource_seed
+mix_ctl
+tef6638_init
+
+### Libraries
+[perms=0755]
+
+#for early audio
+deva-ctrl-mcasp-j6_aic3106.so
+deva-ctrl-mcasp-j6_dummy.so
+deva-ctrl-mcasp-j6_dummy_mic.so
+

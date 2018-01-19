@@ -1,0 +1,3 @@
+@tuners
+am:json:{"type":"analog","rangeMin":880,"rangeMax":1710,"rangeStep":10}
+fm:json:{"type":"analog","rangeMin":87.5,"rangeMax":108.0,"rangeStep":0.1}

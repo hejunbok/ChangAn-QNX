@@ -1,0 +1,88 @@
+{
+    "tab1": {
+        "id": "local:///blank.html",
+        "type": "url",
+        "order": "1",
+        "name": "Voice Control",
+        "opts": {
+           "class": "voice",
+           "voice": true,
+           "visible": true,
+           "pos": {
+               "z": "-2"
+           }
+        }
+    }
+,
+    "tab2": {
+        "id": "Home",
+        "type": "package",
+        "order": "2",
+        "name": "Home",
+        "opts": {
+            "class": "home",
+            "selected": true
+        }
+    }
+,
+    "tab3": {
+        "id": "navigation",
+        "type": "package",
+        "order": "3",
+        "name": "Navigation",
+        "opts": {
+            "class": "nav"
+        }
+    }
+,
+    "tab4": {
+        "id": "MediaPlayer_mmplayer",
+        "type": "package",
+        "order": "4",
+        "name": "Media Player",
+        "opts": {
+            "class": "media"
+        }
+    }
+,
+    "tab5": {
+        "id": "carcontrol",
+        "type": "package",
+        "order": "5",
+        "name": "Car Control",
+        "opts": {
+            "class": "car"
+        }
+    }
+,
+    "tab6": {
+        "id": "Communication",
+        "type": "package",
+        "order": "6",
+        "name": "Communication",
+        "opts": {
+            "class": "comm"
+        }
+    }
+,
+    "tab7": {
+        "id": "AppSection",
+        "type": "local",
+        "order": "7",
+        "name": "Apps Section",
+        "opts": {
+            "class": "apps"
+        }
+    }
+,
+    "tab8": {
+        "id": "Status",
+        "type": "local",
+        "name": "Status",
+        "opts": {
+           "pos": {
+                "z": 1
+            }
+        }
+    }
+}

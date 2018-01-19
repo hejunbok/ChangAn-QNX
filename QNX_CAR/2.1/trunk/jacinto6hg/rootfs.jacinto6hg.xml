@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileset name="rootfs.jacinto6hg">
+  <directory name="var" uid="root" gid="nto" mode="0755"/>
+  <directory name="var/etc" uid="root" gid="nto" mode="0755"/>
+  <directory name="var/etc/system" uid="root" gid="nto" mode="0755"/>
+  <directory name="var/etc/system/config" uid="root" gid="nto" mode="0755"/>
+  <directory name="var/etc/system/config/network" uid="root" gid="nto" mode="0755"/>
+  <!-- uncomment this to bring-up/configure the 2nd ethernet interface. There is currently
+       a known issue with the network stack that could cause it to stop working some of the
+       time if you include this file (COREOS-73970).
+  <file name="var/etc/system/config/network/dm1.conf" uid="root" gid="nto" mode="0640"/>
+  -->
+  <file name="var/etc/system/config/network/dm0.conf" uid="root" gid="nto" mode="0640"/>
+  <file name="var/etc/system/config/calib.localhost" uid="root" gid="nto" mode="0640"/>
+  <file name="var/etc/prov_skel.xml" uid="root" gid="nto" mode="0755"/>
+  <file name="var/etc/services-enabled" uid="root" gid="nto" mode="0755"/>
+  <file name="var/etc/wpa_pps.conf" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/qnxcar/themes" uid="root" gid="nto" mode="0777"/>
+  <!-- pps -->
+  <file name="var/pps/apkruntime/nav_control" uid="root" gid="nto" mode="0777"/>
+  <file name="var/pps/qnxcar/app" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/qnxcar/hvac" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/qnxcar/media" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/radio/control" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/radio/status" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/radio/tuners" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/services/audio/volume" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/services/apkruntime/nav_control" uid="root" gid="nto" mode="0777"/>
+  <file name="var/pps/services/asr/control" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/services/geolocation/status" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/services/air_control" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/screen" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/ui" uid="root" gid="nto" mode="0755"/>
+  <directory name="var/run/mdnsd" uid="root" gid="nto" mode="0755"/>
+  <file name="var/run/mdnsd/dummy" uid="root" gid="nto" mode="0755"/>
+  <directory name="var/tmp" uid="root" gid="nto" mode="0755"/>
+  <directory name="var/tmp/db" uid="root" gid="nto" mode="0755"/>
+  <file name="var/tmp/db/mmsync_car2.sql" uid="root" gid="nto" mode="0755"/>
+  <file name="var/tmp/db/car2_dlna.sql" uid="root" gid="nto" mode="0755"/>
+  <file name="var/tmp/db/personalization.db" uid="root" gid="nto" mode="0755"/>
+
+  <!-- pps for hinge -->
+  <directory name="var/pps/hinge-tech" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/hinge-tech/gesture_control" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/hinge-tech/health_info" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/hinge-tech/lampstatus" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/hinge-tech/music_control" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/hinge-tech/seatcontrol" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/hinge-tech/application_status" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/hinge-tech/camera" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/hinge-tech/source_manger" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/hinge-tech/theme_control" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/services/geolocation/navinfo" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/services/geolocation/vr_control" uid="root" gid="nto" mode="0755"/>
+  <file name="var/pps/services/geolocation/vr_status" uid="root" gid="nto" mode="0755"/>
+
+  <!-- run once -->
+  <file name="srservice.tar.gz" uid="root" gid="nto" mode="0755"/>
+  <file name="kanzi.tar.gz" uid="root" gid="nto" mode="0755"/>
+  <file name="qtcar.tar.gz" uid="root" gid="nto" mode="0755"/>
+  <file name="apk_bar.tar.gz" uid="root" gid="nto" mode="0755"/>
+  <file name="RUNONCE" uid="root" gid="nto" mode="0755"/>
+  <file name="runonce.sh" uid="root" gid="nto" mode="0755"/>
+</fileset>

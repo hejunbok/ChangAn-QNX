@@ -1,0 +1,30 @@
+{
+    "tab1": {
+        "order":   "1",
+        "content": "tab.voicecontrol"
+    },
+    "tab2": {
+        "order":   "2",
+        "content": "tab.home"
+    },
+    "tab3": {
+        "order":   "3",
+        "content": "tab.gears"
+    },
+    "tab4": {
+        "order":   "4",
+        "content": "tab.mediaplayer_inproc"
+    },
+    "tab5": {
+        "order":   "5",
+        "content": "tab.carcontrol_inproc"
+    },
+    "tab6": {
+        "order":   "6",
+        "content": "tab.communication_inproc"
+    },
+    "tab7": {
+        "order":   "7",
+        "content": "tab.appsection"
+    }
+}

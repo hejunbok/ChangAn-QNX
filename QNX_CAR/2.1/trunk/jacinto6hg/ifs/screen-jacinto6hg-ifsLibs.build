@@ -1,0 +1,42 @@
+### screen-jacinto6.build
+
+[+script] car_startup_screen_jacinto6 = {
+	tiler &
+	waitfor /dev/tiler
+    GRAPHICS_ROOT=/proc/boot
+}
+
+
+### Libraries
+[perms=0755]
+libmtouch-calib.so.1
+
+graphics/jacinto6/libglslcompiler.so
+graphics/jacinto6/libwfdcfg-generic.so
+graphics/jacinto6/libIMGegl.so
+graphics/jacinto6/libImgGLESv1_CM.so
+graphics/jacinto6/libImgGLESv2.so
+graphics/jacinto6/libpvr2d.so
+graphics/jacinto6/libPVRScopeServices.so
+graphics/jacinto6/libsrv_um.so
+graphics/jacinto6/libWFDjacinto6.so
+graphics/jacinto6/pvrsrv.so
+graphics/jacinto6/pvrsrvinit.so
+graphics/jacinto6/wsegl-screen.so
+
+dll/screen-pvr2d.so
+
+# Will live in a path of the form .../armle-v7/ti/jacinto6/...
+../ti/jacinto6/lib/dll/tiler_pat.so
+../ti/jacinto6/usr/lib/libtilerusr.so
+
+### Executables
+[perms=0755 data=c]
+
+graphics.conf=../etc/system/config/graphics.conf
+[type=link] /base/usr/lib/graphics/jacinto6/graphics.conf=/proc/boot/graphics.conf
+
+# Will live in a path of the form .../armle-v7/ti/jacinto6/...
+../ti/jacinto6/bin/tiler
+
+##eof

@@ -1,0 +1,35 @@
+[+script] .script = {
+        #######################################################################
+        ## Console SERIAL driver
+        #######################################################################
+        display_msg Starting UART1 (Console)
+        devc-seromap -e -F -b115200 -c48000000/16 0x4806A000^2,104 -u1 &
+        reopen /dev/ser1
+
+        # Set system clock from RTC
+	rtc hw &
+        #######################################################################
+        ## These env variables are inherited by all the programs which follow
+        #######################################################################
+
+        SYSNAME=nto
+        TERM=qansi
+        HOME=/
+
+}
+
+[perms=0644] .splash-screen = {	
+    waitfor /base/usr/share/images/car-startup1280x800.png
+    
+    #display_image -zorder=-2 -noinit=1 -display=2 -size=1280x800 -file=/base/usr/share/images/car-startup1280x800.png -pipeline=1 &
+    #display_image -zorder=-2 -noinit=1 -display=1 -size=1280x720 -file=/base/usr/share/images/car-startup720p.png -pipeline=3 &
+    startupanimation &
+
+}
+
+# Executables
+[data=c perms=0755]
+devc-seromap
+out32
+rtc
+startupanimation

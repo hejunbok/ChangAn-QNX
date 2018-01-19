@@ -1,0 +1,7 @@
+@lampstatus
+ambience:n:2
+brightness:n:3
+intersection:b:true
+steerwheelshock:n:0
+turn_left:b:true
+turn_right:b:false

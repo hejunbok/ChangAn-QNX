@@ -1,0 +1,27 @@
+[compress=2]
+
+[perms=0755 data=c]
+[prefix=/bin]
+
+[perms=0755 data=c]
+[prefix=/sbin]
+
+[perms=0755 data=c]
+[prefix=/usr/bin]
+
+[perms=0755 data=c]
+[prefix=/usr/sbin]
+
+[perms=0755]
+[prefix=/lib]
+
+
+[perms=0755]
+[prefix=/usr/lib]
+
+[perms=0755]
+[prefix=/lib/dll]
+
+[perms=0755]
+[prefix=/lib/dll/mmedia]
+

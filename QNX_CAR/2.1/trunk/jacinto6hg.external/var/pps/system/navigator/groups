@@ -1,0 +1,23 @@
+core.all::All
+core.downloads::Downloads
+core.internet::Internet
+core.games::Games
+core.utils::Utilities
+core.ent::Entertainment
+core.social::Social Networking
+core.prod::Productivity
+core.life::Lifestyle
+core.ref::Reference
+core.travel::Travel
+core.news::News
+core.photo::Photography
+core.business::Business
+core.edu::Education
+core.books::Books
+core.medical::Medical
+core.media::Media
+core.flash::Flash Apps
+core.tools::Test Tools
+core.test::Test Apps
+core.graphics::Graphics
+

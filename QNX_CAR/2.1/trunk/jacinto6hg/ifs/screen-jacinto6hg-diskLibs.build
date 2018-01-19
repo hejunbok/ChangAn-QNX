@@ -1,0 +1,16 @@
+### screen-jacinto6.build
+
+[+script] car_startup_screen_jacinto6 = {
+	waitfor /base/bin/tiler
+	display_msg Starting tiler...
+	tiler &
+	
+    display_msg Waiting for tiler before starting screen...
+	waitfor /dev/tiler
+    display_msg Tiler ready!
+    GRAPHICS_ROOT=/base/usr/lib/graphics/jacinto6
+}
+
+[type=link] /base/usr/lib/graphics/jacinto6/graphics.conf=/base/etc/system/config/graphics.conf
+
+##eof

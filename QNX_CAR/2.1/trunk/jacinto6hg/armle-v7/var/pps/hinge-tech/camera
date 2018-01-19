@@ -1,0 +1,5 @@
+@camera
+capture::start
+direct::left
+left_port::1235
+right_port::1236

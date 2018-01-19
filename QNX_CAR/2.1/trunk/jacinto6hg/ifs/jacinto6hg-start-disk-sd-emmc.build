@@ -1,0 +1,38 @@
+###########################################################################
+##
+## Starts the system disk as /dev/cardisk*, and any other required disks
+## and dependencies
+##
+###########################################################################
+
+[+script] .script = {
+    display_msg Starting eMMC as system disk /dev/cardisk0 (SD card will be /dev/sd0)...
+    # START eMMC
+    devb-sdmmc-omap_generic blk hookdll=vfs-hooks-rim.so,noatime,cache=8M,automount=@/proc/boot/automount cam cache,async,quiet sdio hc=omap,addr=0x480B4000,irq=118,clk=96000000 dos exe=all disk name=cardisk &
+}
+
+#This will be called later on
+[perms=0555] .start-secondary-disks = {
+    print Starting SD card at /dev/sd0...
+    devb-sdmmc-omap_generic blk noatime,cache=8M,automount=+sd0t12:/dos:dos cam cache,async,quiet,pnp sdio hc=omap,addr=0x4809C000,irq=115,clk=96000000 dos exe=all disk name=sd &
+
+    # The sata driver will be available in the system disk, not in the IFS
+    waitfor /base/sbin/devb-ahci-omap5
+    print Starting SATA at /dev/satadrive0...
+    devb-ahci-omap5 ahci ioport=0x4a140000,irq=86 blk cache=16m,noatime cam cache,async,quiet dos exe=all disk name=satadrive &
+}
+
+[perms=0750] env.override.diskconf = {
+    #Declare the disk variant in env
+    export IFS_VARIANT=jacinto6hg-sd-emmc.ifs
+}
+
+### Libraries
+[perms=0755]
+
+# for apkruntime player (allows 800/800 to acts as root inside apkruntime sandbox) 
+vfs-hooks-rim.so
+
+# Executables
+[data=c perms=0755]
+devb-sdmmc-omap_generic

@@ -1,0 +1,145 @@
+
+    <!-- VARIANT SPECIFIC ENTRIES -->
+
+    <SLM:component name="symlink_wifi">
+          <SLM:command launch="builtin">pathmgr_symlink</SLM:command>
+          <SLM:args>/var/etc/ap_pps_mhs.conf /base/etc/ap_pps_mhs.conf; /var/etc/wpa_pps.conf /base/etc/wpa_pps.conf; /var/etc/wpa_supplicant.conf /base/etc/wpa_supplicant.conf</SLM:args>
+   </SLM:component>
+<!--
+ <SLM:component name="usb">
+        <SLM:command>start-io-usb.sh</SLM:command>
+        <SLM:args></SLM:args>
+        <SLM:waitfor wait="pathname">/dev/io-usb/io-usb</SLM:waitfor>
+        <SLM:stop stop="signal">SIGTERM</SLM:stop>
+   </SLM:component>
+-->
+
+ <SLM:component name="usb">
+        <SLM:command>io-usb</SLM:command>
+        <SLM:args>-vvv -c -d omap5-xhci ioport=0x48890000,irq=108</SLM:args>
+        <SLM:waitfor wait="pathname">/dev/io-usb/io-usb</SLM:waitfor>
+        <SLM:stop stop="signal">SIGTERM</SLM:stop>
+   </SLM:component>
+
+   <SLM:component name="keyboard">
+        <SLM:command>keyboard-imf</SLM:command>
+	<SLM:args>-U 99:0 -d other</SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>pps-setup</SLM:depend>
+        <SLM:depend>screen-ready</SLM:depend>
+        <SLM:depend>io-hid</SLM:depend>
+   </SLM:component>  
+
+   <!-- BLUETOOTH DUMMY SERVICE: If you enable the bluetooth services below, comment out this dummy service! -->
+   <!--
+   <SLM:component name="pps-bluetooth">
+	<SLM:command launch="builtin">no_op</SLM:command>
+   </SLM:component>
+   -->  
+ 
+   <!-- BLUETOOTH START: Bluetooth is disabled by default to enable please remove the comment tags -->
+   
+   <SLM:component name="hci">
+        <SLM:command>devc-seromap_hci</SLM:command>
+	<!--SLM:args>-E -f -a -g 0x4805b000,132 0x48020000,106</SLM:args-->
+	<SLM:args>-E -f -a -g 0x48057000,77 0x48020000,106</SLM:args>
+	<SLM:waitfor wait="pathname">/dev/serbt1</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+   </SLM:component>
+   
+   <SLM:component name="bluetooth">
+        <SLM:command>io-bluetooth</SLM:command>
+	<SLM:args>-vvvvvvvv -s /etc/system/config/bluetooth/TIInit_12.8.32.QNX.bts</SLM:args>
+	<SLM:waitfor wait="pathname">/dev/io-bluetooth/btmgr</SLM:waitfor>
+	<SLM:stdout>/var/log/io-bluetooth/stdout</SLM:stdout>
+	<SLM:stderr>/var/log/io-bluetooth/stderr</SLM:stderr>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>hci</SLM:depend>
+	<SLM:depend>ioacoustic</SLM:depend>
+	<SLM:depend>qdb</SLM:depend>
+	<!-- just add for io-bluetooth timing issue -->
+	<SLM:depend>certmgr</SLM:depend>
+   </SLM:component>
+
+   <SLM:component name="pps-bluetooth">
+        <SLM:command>pps-bluetooth</SLM:command>
+	<SLM:args>-vvvvv</SLM:args>
+ 	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>bluetooth</SLM:depend>
+	<SLM:depend>pps</SLM:depend>
+   </SLM:component>
+   
+   <SLM:component name="pps-pbap-initiator">
+	<SLM:command>bluetooth-pbap-initiator</SLM:command>
+	<SLM:args>-vv</SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>pps</SLM:depend>
+   </SLM:component>
+   
+   <SLM:component name="pps-map-initiator">
+	<SLM:command>bluetooth-map-initiator</SLM:command>
+	<SLM:args>-vv</SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>pps</SLM:depend>
+	<SLM:depend>qdb</SLM:depend>
+   </SLM:component>
+
+   <SLM:component name="pan-if-monitor">
+	<SLM:command>ifwatchd</SLM:command>
+	<SLM:args>-A /scripts/ifarrv.sh -D /scripts/ifdepart.sh pan0</SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+   </SLM:component>
+
+  <!-- BLUETOOTH END: Bluetooth is disabled by default to enable please remove the comment tags -->
+
+   <SLM:component name="io-audio_mcbsp">
+        <SLM:command>io-audio</SLM:command>
+        <SLM:args>-d mcasp-j6 mcasp=6,clk_mode=slave,tx_serializer=1,rx_serializer=0,unit=1</SLM:args>
+        <SLM:depend>io-audio</SLM:depend>
+   </SLM:component>
+ <!-- 
+   <SLM:component name="io-audio_mic">
+        <SLM:command>io-audio</SLM:command>
+        <SLM:args>-vvv -d mcasp-j6_dummy_mic mcasp=2,clk_mode=slave,cap_name=defaultc,unit=2</SLM:args>
+        <SLM:depend>io-audio_mcbsp</SLM:depend>
+   </SLM:component>   
+-->
+    <SLM:component name="syslink_daemon">
+          <SLM:command>/base/bin/ipc</SLM:command>
+          <SLM:args>IPU2 /lib/firmware/ipu2/dra7xx-m4-ipu2.xem4</SLM:args>
+        <SLM:waitfor wait="pathname">/dev/ipc</SLM:waitfor>
+   </SLM:component>
+
+   <SLM:component name="trace_syslink">                          
+        <SLM:command>ipc_trace_daemon</SLM:command>                 
+        <SLM:stop stop="signal">SIGTERM</SLM:stop>
+        <SLM:depend>syslink_daemon</SLM:depend>                          
+   </SLM:component> 
+
+   <SLM:component name="dvfs">                          
+        <SLM:command>dvfsmgr-j6</SLM:command>                 
+        <SLM:args>-c /base/etc/dvfs/config/j6/dvfs_j6.conf -v</SLM:args>
+        <SLM:waitfor wait="pathname">/dev/dvfs</SLM:waitfor>
+        <SLM:stop stop="signal">SIGTERM</SLM:stop>
+   </SLM:component> 
+
+   <SLM:component name="dvfs_client">                          
+        <SLM:command>dvfs_client</SLM:command>                 
+        <SLM:stop stop="signal">SIGTERM</SLM:stop>
+        <SLM:depend>dvfs</SLM:depend>                          
+        <SLM:waitfor wait="blocks"></SLM:waitfor>
+   </SLM:component> 
+
+   <!-- Set level 0 as the minimum level for power-savings
+        This is because we are not really concerned with power saving, at least
+        compared with our concern for overheating. This will ensure we always run
+        at the max frequency, unless the temperature exceeds the thresholds defined
+        in the config file. This is per recommendation from QNX BSP team (see 
+        https://jira.bbqnx.net/browse/QCARTWO-2727 for details).
+   -->
+   <SLM:component name="dvfs-set-min-level">                          
+        <SLM:command launch="builtin">system</SLM:command>                 
+        <SLM:args>echo S0 > /dev/dvfs_client_1</SLM:args>
+        <SLM:depend>dvfs_client</SLM:depend>                          
+        <SLM:depend>dvfs</SLM:depend>                          
+   </SLM:component> 

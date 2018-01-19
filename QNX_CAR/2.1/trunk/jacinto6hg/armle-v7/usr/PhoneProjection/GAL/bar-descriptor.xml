@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<qnx xmlns="http://www.qnx.com/schemas/application/1.0">
+    <id>gal</id>
+    <name>Gal</name>
+    <versionNumber>1.0.0</versionNumber>
+    <buildId>1</buildId>
+    <description>Google GAL</description>
+    <author>QNX</author>
+    <initialWindow>
+        <autoOrients>true</autoOrients>
+        <systemChrome>none</systemChrome>
+        <transparent>false</transparent>
+    </initialWindow>
+    <category>carplay</category>
+    <asset path="display_black" entry="true" type="Qnx/Elf">display_black</asset>
+    <icon>
+       <image>icon.png</image>
+    </icon>
+    <permission system="true">run_native</permission>
+    <permission system="true">configure_system</permission>
+</qnx>

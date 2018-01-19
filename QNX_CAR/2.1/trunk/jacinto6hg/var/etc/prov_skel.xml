@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<location_provider>
+    <name>skel</name>
+    <dll>/lib/dll/devlp-skel.so</dll>
+    <class>gnss</class>
+</location_provider>

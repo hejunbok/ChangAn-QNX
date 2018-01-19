@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileset name="basefs.jacinto6hg">
+  <directory name="bin" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/resource_seed" uid="root" gid="nto" mode="0755"/>
+  <directory name="etc" uid="root" gid="nto" mode="0755"/>
+  <directory name="etc/system" uid="root" gid="nto" mode="0755"/>
+  <directory name="etc/system/config" uid="root" gid="nto" mode="0755"/>
+  <directory name="etc/system/config/bluetooth" uid="root" gid="nto" mode="0755"/>
+  <file name="etc/system/config/bluetooth/TIInit_12.10.28.QNX.bts" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/system/config/bluetooth/TIInit_12.8.32.QNX.bts" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/system/config/graphics.conf.10" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/system/config/graphics.conf.17" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/system/config/graphics.conf.17hdmi" uid="root" gid="nto" mode="0644"/>
+  <symlink name="etc/system/config/graphics.conf" target="graphics.conf.10" uid="root" gid="nto" mode="0755"/>
+  <file name="etc/system/config/mtouch.conf" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/system/config/qnxair.conf" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/system/config/launcher.cfg" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/secondary.ifs" uid="root" gid="nto" mode="0644"/>
+  <directory name="lib" uid="root" gid="nto" mode="0755"/>
+  <symlink name="lib/libusbdi.so" target="libusbdi.so.2" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libusbdi.so.2" uid="root" gid="nto" mode="0755"/>
+  <symlink name="lib/libmtouch-calib.so" target="libmtouch-calib.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libmtouch-calib.so.1" uid="root" gid="nto" mode="0755"/>
+  <symlink name="lib/libmtouch-devi.so" target="libmtouch-devi.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libmtouch-devi.so.1" uid="root" gid="nto" mode="0755"/>
+  <symlink name="lib/libmtouch-lg-tsc101.so" target="libmtouch-lg-tsc101.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libmtouch-lg-tsc101.so.1" uid="root" gid="nto" mode="0755"/>
+  <directory name="lib/dll" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/deva-ctrl-mcasp-j6_aic3106.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/deva-ctrl-mcasp-j6.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/devnp-dm814x-j6.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/devu-omap5-xhci.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/devu-usbncm-omap543x-dwcotg3.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/devu-usbser-omap543x-dwcotg3.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/devu-usbumass-omap543x-dwcotg3.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/fs-nt.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/spi-omap4430.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/screen-gles1.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/screen-gles2.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/screen-pvr2d.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/screen-sw.so" uid="root" gid="nto" mode="0755"/>
+  <directory name="sbin" uid="root" gid="nto" mode="0755"/>
+  <file name="sbin/devb-sdmmc-omap_generic" uid="root" gid="nto" mode="0755"/>
+  <file name="sbin/devb-ahci-omap5" uid="root" gid="nto" mode="0755"/>
+  <file name="sbin/devc-seromap" uid="root" gid="nto" mode="0755"/>
+  <file name="sbin/devc-seromap_hci" uid="root" gid="nto" mode="0755"/>
+  <file name="sbin/i2c-omap35xx-omap4" uid="root" gid="nto" mode="0755"/>
+  <file name="sbin/devi-lg-tsc-101" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/isend" uid="root" gid="nto" mode="0755"/>
+  <file name="sbin/rtc" uid="root" gid="nto" mode="0755"/>
+  <file name="sbin/devf-j6evm-qspi" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/bin/flashctl" uid="root" gid="nto" mode="0755"/>
+  <file name="sbin/fs-etfs-jacinto5_micron" uid="root" gid="nto" mode="0755"/>
+  <file name="sbin/spi-master" uid="root" gid="nto" mode="0755"/>
+  <directory name="usr" uid="root" gid="nto" mode="0755"/>
+  <directory name="usr/bin" uid="root" gid="nto" mode="0755"/>
+  <directory name="usr/lib" uid="root" gid="nto" mode="0755"/>
+  <directory name="usr/lib/graphics" uid="root" gid="nto" mode="0755"/>
+   <!-- graphics -->
+  <file name="usr/lib/graphics/jacinto6/libglslcompiler.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/graphics/jacinto6/libwfdcfg-generic.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/graphics/jacinto6/libIMGegl.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/graphics/jacinto6/libImgGLESv1_CM.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/graphics/jacinto6/libImgGLESv2.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/graphics/jacinto6/libpvr2d.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/graphics/jacinto6/libPVRScopeServices.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/graphics/jacinto6/libsrv_um.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/graphics/jacinto6/libusc.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/graphics/jacinto6/libWFDjacinto6.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/graphics/jacinto6/pvrsrv.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/graphics/jacinto6/pvrsrvinit.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/graphics/jacinto6/wsegl-screen.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/bin/gles1-gears" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/bin/gles2-gears" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/bin/egl-configs" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/bin/sw-vsync" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/car-startup1280x800.png" uid="root" gid="nto" mode="0755"/>
+  
+  <!-- *********************** HINGE ********************* -->
+  <!-- lib -->
+  <file name="lib/dll/iofs-pfs.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/libqdb_notify.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/deva-ctrl-mcasp-j6_dummy.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/deva-ctrl-mcasp-j6_dummy_mic.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/devnp-89501-j6.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/apm-aap-hf.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libAECKernel.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libdicompile.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libiFlyNLI.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libissauth.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libissmvw.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libisssr.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libisstts.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libkanzi.so.1.0.0" uid="root" gid="nto" mode="0755"/>
+  <symlink name="lib/libkanzi.so.1" target="libkanzi.so.1.0.0" uid="root" gid="nto" mode="0755"/>
+  <symlink name="lib/libkanzi.so" target="libkanzi.so.1.0.0" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/liblsa.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libMAEKernel.so.1" uid="root" gid="nto" mode="0755"/>
+  <symlink name="lib/libMAEKernel.so" target="libMAEKernel.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libmsc.so" uid="root" gid="nto" mode="0755"/>
+  <symlink name="lib/libmtouch-atmel-j6.so" target="libmtouch-atmel-j6.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libmtouch-atmel-j6.so.1" uid="root" gid="nto" mode="0755"/>
+  <!-- opt -->
+  <directory name="opt" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/airplay.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/apploading.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/appslay.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/audioup.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/gdnavi.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/init_demo_pps.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/kanzi.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/radio.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/runml.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/setapkwin.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/setzorder.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/setappzorder.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/socketgps.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/tunerservice.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/uart.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/notification_tone.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/car_info.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/peripherals_start.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/switch_upd_ifs.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/setzorder_pid.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/fixbt.sh" uid="root" gid="nto" mode="0755"/>
+  <!-- sbin -->
+  <file name="sbin/io-bluetooth" uid="root" gid="nto" mode="0755"/>
+  <file name="sbin/devf-ti_qspi" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/uart_ipc" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/tef6638_init" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/tef6638_init_1" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/xf6000_driver" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/startupanimation" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/car_info_demo" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/camera_capture" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/camera_capture_cal" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/camera.dat" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/watchservice" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/glassesservice" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/clusterservice" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/polorinit" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/bin/mmrplay" uid="root" gid="nto" mode="0755"/>
+  <!-- scripts -->
+  <directory name="scripts" uid="root" gid="nto" mode="0755"/>
+  <file name="scripts/apkruntime-start.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="scripts/ethernet.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="scripts/hid-start.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="scripts/mixer-volume-init.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="scripts/start-io-usb.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="scripts/wifi.sh" uid="root" gid="nto" mode="0755"/>
+  <!-- usr -->
+  <directory name="usr" uid="root" gid="nto" mode="0755"/>
+  <directory name="usr/bin" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/bin/screencmd" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/bin/waverec" uid="root" gid="nto" mode="0755"/>
+  <directory name="usr/lib" uid="root" gid="nto" mode="0755"/>
+  <directory name="usr/lib/graphics" uid="root" gid="nto" mode="0755"/>
+  <directory name="usr/lib/graphics/jacinto6" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/graphics/jacinto6/libwfdcfg-generic.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/libaudiohero.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/libdbnotify.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/airplaywaiting.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/changanlogo.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/changanlogo720576.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/changanlogo958720.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/loading.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_0.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_1.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_2.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_3.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_4.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_5.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_6.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_7.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_8.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_9.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_10.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_11.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_12.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_13.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_14.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_15.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_16.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_17.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/share/images/Splash_41.png" uid="root" gid="nto" mode="0755"/>
+  <!-- tuner -->
+  <file name="bin/socket_server_test" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/audioservice" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/tunerservice" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/radioplayer" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/select_input" uid="root" gid="nto" mode="0755"/>
+  <file name="opt/tunerservice.sh" uid="root" gid="nto" mode="0755"/>
+
+</fileset>

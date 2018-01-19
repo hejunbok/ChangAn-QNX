@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileset name="basefs.jacinto6hg.carplay">
+  <!-- CarPlay -->
+  <directory name="usr/PhoneProjection" uid="root" gid="nto" mode="0755"/>
+  <directory name="usr/PhoneProjection/CarPlay" uid="root" gid="nto" mode="0755"/>
+  <directory name="usr/PhoneProjection/GAL" uid="root" gid="nto" mode="0755"/>
+  <directory name="lib/dll/airplayd" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/airplayd/libAudioStream_ioacoustic.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/airplayd/libAudioStream_ioaudio.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/airplayd/libScreenStream_mdev.so" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/phoneprojman" uid="root" gid="nto" mode="0755"/>
+  <file name="bin/usblauncher" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/libAudioStream.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/libScreenStream.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/libAudioStream_ioacoustic.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/libAudioStream_ioaudio.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/libScreenStream_mdev.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/ipod-acp-i2c.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/ipod-drvr-iap2.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/ipod-transport-usbdevice.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/ipod-transport-usbhost.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/lsm-autoip.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/mss-ipodiap2.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/nss_mdnsd.so" uid="root" gid="nto" mode="0755"/>
+  <symlink name="lib/libusbdci.so" target="libusbdci.so.2" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/libusbdci.so.2" uid="root" gid="nto" mode="0755"/>
+  <file name="sbin/i2c-linkm" uid="root" gid="nto" mode="0755"/>
+  <file name="sbin/i2c-qui" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/PhoneProjection/CarPlay/MANIFEST.MF" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/PhoneProjection/CarPlay/bar-descriptor.xml" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/PhoneProjection/CarPlay/default.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/PhoneProjection/CarPlay/display_black" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/PhoneProjection/GAL/MANIFEST.MF" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/PhoneProjection/GAL/bar-descriptor.xml" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/PhoneProjection/GAL/default.png" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/PhoneProjection/GAL/display_black" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/bin/screencmd" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/bin/airplaydemo" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/bin/airplayutil" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/bin/phoneprojection-srv" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/libAirPlay.so" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/libAirPlaySupport.so" uid="root" gid="nto" mode="0755"/>
+  <symlink name="usr/lib/libdns_sd.so" target="libdns_sd.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/libdns_sd.so.1" uid="root" gid="nto" mode="0755"/>
+  <symlink name="usr/lib/libiap2client.so" target="libiap2client.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/lib/libiap2client.so.1" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/sbin/mdnsd" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/sbin/mm-ipod" uid="root" gid="nto" mode="0755"/>
+
+  <file name="etc/resolv.conf" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/airplay.conf" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/mm/iap2.cfg" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/phoneproj.cfg" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/usblauncher/iap2.lua" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/usblauncher/iap2ea.lua" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/usblauncher/iap2ncm.lua" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/usblauncher/otg.lua" uid="root" gid="nto" mode="0644"/>
+  <file name="etc/usblauncher/startncm.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="etc/usblauncher/stopncm.sh" uid="root" gid="nto" mode="0755"/>
+  <file name="scripts/carplay_autoip.sh" uid="root" gid="nto" mode="0755"/>
+  
+</fileset>

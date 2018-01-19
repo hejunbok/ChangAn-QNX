@@ -1,0 +1,106 @@
+    <!-- 
+      Used to signal the HMI that the launcher is up
+    -->
+    <SLM:module name="launcher">
+        <SLM:member>launcher</SLM:member>
+    </SLM:module>
+
+    <!-- 
+      Defines services required to bring up multimedia HMI application
+    -->
+    <SLM:module name="MediaPlayer">
+        <SLM:member>qdb</SLM:member>
+        <SLM:member>mmcontrol</SLM:member>
+        <SLM:member>mmdetect</SLM:member>
+        <SLM:member>webkit</SLM:member>
+<!--        <SLM:member>multimedia</SLM:member> -->
+    </SLM:module>
+    
+    <!-- 
+      Defines services required to bring up mm-player-based multimedia HMI application
+    -->
+    <SLM:module name="MediaPlayer_mmplayer">
+        <SLM:member>qdb</SLM:member>
+        <SLM:member>mmplayer</SLM:member>
+        <SLM:member>webkit</SLM:member>
+    </SLM:module>
+
+    <!--
+      Signal HMI to bring up this tab (the service required is already running by this point
+    -->
+    <SLM:module name="rearview_camera">
+    </SLM:module>
+    
+    <!--
+      Defines services required to bring up input
+    -->
+    <SLM:module name="car2-input">
+        <SLM:member>io-hid</SLM:member>
+        <SLM:member>devi-hid</SLM:member>
+        <SLM:member>calib</SLM:member>
+    </SLM:module>
+
+    <!-- 
+      Defines services required to bring up Home HMI application
+    -->
+    <SLM:module name="Home">
+        <SLM:member>webkit</SLM:member>
+    </SLM:module>
+
+    <!-- 
+      Defines services required to bring up carcontrol HMI application
+    -->
+    <SLM:module name="carcontrol">
+        <SLM:member>webkit</SLM:member>
+    </SLM:module>
+
+    <!-- 
+      Defines services required to bring up Communication HMI application
+    -->
+    <SLM:module name="Communication">
+        <SLM:member>pps-bluetooth</SLM:member>    
+        <SLM:member>webkit</SLM:member>
+    </SLM:module>
+
+    <!-- 
+      Defines services required to bring up AppSection HMI application
+    -->
+    <SLM:module name="AppSection">
+        <SLM:member>pps-bluetooth</SLM:member>        
+        <SLM:member>webkit</SLM:member>
+    </SLM:module>
+
+    <!-- 
+      Defines services required to bring up ASR HMI application
+      PROBLEM: Need an ID that will work 
+    -->
+   <SLM:module name="ASR">
+        <SLM:member>asr</SLM:member>        
+        <SLM:member>webkit</SLM:member>
+    </SLM:module>
+
+    <!-- 
+      Defines services required to bring up Status HMI application
+    -->
+    <SLM:module name="Status">
+        <SLM:member>pps-bluetooth</SLM:member>    
+        <SLM:member>mixer-volume</SLM:member>    
+        <SLM:member>webkit</SLM:member>
+    </SLM:module>
+
+    <!-- 
+      Defines services required to bring up navigation HMI application
+    -->
+    <SLM:module name="navigation">
+        <!-- start of ebnav is delayed - https://jira.bbqnx.net/browse/QCARTWO-4455 -->
+        <SLM:member>webkit</SLM:member>
+    </SLM:module>
+
+    <!-- 
+      Defines services required to bring up htmlgears HMI application
+    -->
+    <SLM:module name="htmlgears">
+        <SLM:member>webkit</SLM:member>
+        <SLM:member>nav-menu</SLM:member>
+    </SLM:module>
+

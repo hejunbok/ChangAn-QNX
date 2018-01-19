@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileset name="basefs.omap5uevm.wireless">
+  <file name="usr/sbin/wpa_supplicant_ti18xx" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/sbin/hostapd_ti18xx" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/sbin/tiwlan_cfg_ti18xx" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/sbin/hostapd_cli_ti18xx" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/sbin/wlan_cu_ti18xx" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/sbin/wpa_cli_ti18xx" uid="root" gid="nto" mode="0755"/>
+  <file name="usr/sbin/wpa_passphrase_ti18xx" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/dll/devnp-ti18xx_dra74x.so" uid="root" gid="nto" mode="0755"/>
+  <file name="lib/firmware/ti18xx/firmware_ti18xx.bin" uid="root" gid="nto" mode="0755"/>
+  <file name="etc/roleAp_ti18xx.ini" uid="root" gid="nto" mode="0755"/>
+  <file name="etc/roleSta_ti18xx.ini" uid="root" gid="nto" mode="0755"/>
+  <file name="etc/roleP2pCl_ti18xx.ini" uid="root" gid="nto" mode="0755"/>
+  <file name="etc/tiwlan_18xx.ini" uid="root" gid="nto" mode="0755"/>
+  <file name="etc/hostapd_ti18xx.conf" uid="root" gid="nto" mode="0755"/>
+  <file name="etc/tiwlanRegDomain.ini" uid="root" gid="nto" mode="0755"/>
+  <file name="etc/wpa_supplicant_ti18xx.conf" uid="root" gid="nto" mode="0755"/>
+  <symlink name="var/etc/wpa_pps.conf" target="etc/wpa_pps.conf" uid="root" gid="nto" mode="0755"/>
+  <symlink name="var/etc/wpa_supplicant.conf" target="etc/wpa_supplicant.conf" uid="root" gid="nto" mode="0755"/>
+</fileset>

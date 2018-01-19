@@ -1,0 +1,37 @@
+Archive-Manifest-Version: 1.1
+Archive-Created-By: BlackBerry Tablet OS Elf BAR Packager 1.4.1
+
+Package-Type: application
+Package-Author: QNX
+Package-Author-Id: testUU5YICAgICAgICAgICAgICA
+Package-Name: carplay
+Package-Id: testRel_carplay____210a0108
+Package-Version: 1.0.0.1
+Package-Version-Id: testMS4wLjAuMSAgICAgICAgICA
+Package-Architecture: armle-v7
+
+Application-Name: CarPlay
+Application-Id: testRel_carplay____210a0108
+Application-Description: Apple Carplay
+Application-Version: 1.0.0.1
+Application-Version-Id: testMS4wLjAuMSAgICAgICAgICA
+Application-Category: carplay
+Application-Requires-System: Tablet OS/2.0.0.0
+Application-Development-Mode: false
+
+Entry-Point-Name: CarPlay
+Entry-Point: app/native/display_black
+Entry-Point-Type: Qnx/Elf
+Entry-Point-Icon: native/icon.png
+Entry-Point-Orientation: auto
+Entry-Point-System-Actions: run_native,configure_system
+
+Archive-Asset-Name: native/display_black
+Archive-Asset-SHA-512-Digest: ZCR4ahdWXmaQeTw53G70PaL3jw5vdKFwiOX67sL6Nr_-_h3OXrcTUTbjL4oYEvYHlplfSqLO3vxk1HaW5m5Gjg
+Archive-Asset-Type: Qnx/Elf
+
+Archive-Asset-Name: native/icon.png
+Archive-Asset-SHA-512-Digest: ERitbvW2iyEFTKDNpabdSB3QUs7pjz90z-Osaoxb2cXP5b5pOplfb8BnY8xVRIEi_E-8Qq-gjGQaXzz0yq3ffA
+
+Archive-Asset-Name: native/bar-descriptor.xml
+Archive-Asset-SHA-512-Digest: BZgNNhuxejmkoROsmvDGRdJjM5b_H6pw36YeJJuFhbXo4bmU8KyD6g7pjUSJKDU4mYDu8hFQKKr4nuKN0ptAjQ

@@ -1,0 +1,67 @@
+###########################################################################
+##
+## QNX Neutrino 6.5.0 on the Texas Instruments J6 EVM Board
+##
+###########################################################################
+##
+## SUPPORTED DEVICES:
+##
+## SERIAL:   OMAP UART
+## I2C:      Inter-Integrated Circuit Bus
+## SPI:      Serial Peripheral Interface Bus
+## MMC/SD:   MultMediaCard/Secure Digital  
+## 
+###########################################################################
+##
+## NOTES:
+##
+###########################################################################
+
+###########################################################################
+## START OF BUILD SCRIPT
+###########################################################################
+
+[image=0x80100000]
+
+# For loading IFS images with the U-Boot
+[virtual=armle-v7,raw] .bootstrap = {
+    # for the nanospin value given with -nXXX,YYYY we used the output of nanospin_measure
+    #startup-dra74x-vayu-evm -n852,668 -b -J
+    startup-dra74x-vayu-evm -vv -n852,668 -b -J -V
+    #######################################################################
+    ## PATH set here is the *safe* path for executables.
+    ## LD_LIBRARY_PATH set here is the *safe* path for libraries.
+    ##     i.e. These are the paths searched by setuid/setgid binaries.
+    ##          (confstr(_CS_PATH...) and confstr(_CS_LIBPATH...))
+    #######################################################################
+    [module=aps] PATH=/proc/boot:/bin:/usr/bin:/opt/bin:/base/bin:/base/usr/bin:/base/sbin:/base/usr/sbin LD_LIBRARY_PATH=/proc/boot:/lib:/usr/lib:/lib/dll:/opt/lib:/base/lib:/base/usr/lib:/base/lib/dll procnto-smp-instr -ae 
+}
+
+[-page_align code=uip data=copy +compress]
+
+[+script] .script = {
+    # Initialise the console
+    procmgr_symlink ../../proc/boot/libc.so.3 /usr/lib/ldqnx.so.2
+
+    #######################################################################
+    ## I2C driver
+    #######################################################################
+    i2c-omap35xx-omap4 -p 0x48070000 -i 88 -c3 --u0 &
+    i2c-omap35xx-omap4 -p 0x48072000 -i 89 -c3 --u1 &
+    i2c-omap35xx-omap4 -p 0x48060000 -i 93 -c3 --u2 &
+    i2c-omap35xx-omap4 -p 0x4807a000 -i 94 -c3 --u3 &
+    #i2c-omap35xx-omap4 -p 0x4807c000 -i 92 -c3 --u4 &
+    i2c-omap35xx-omap4 -p 0x4807c000 -i 92 -c3 -s 0x11 --u4 &
+    waitfor /dev/i2c4 3
+    procmgr_symlink  /dev/i2c4 /dev/i2c99
+
+    timestamp "IFS SCRIPT START" &
+    #display_msg Welcome to QNX Neutrino for CAR2 on the Texas Instruments J6 EVM (ARMv7 Cortex-A15 core)
+}
+
+[perms=0755] 
+pidin
+mount
+ls
+cat
+

@@ -1,0 +1,79 @@
+begin khronos
+
+  begin egl display 1
+    egl-dlls = [IMG%s] libusc.so libsrv_um.so libpvr2d.so libIMGegl.so
+    glesv1-dlls = libusc.so libsrv_um.so  libIMGegl.so libImgGLESv1_CM.so
+    glesv2-dlls = libusc.so libsrv_um.so libusc.so libIMGegl.so libImgGLESv2.so
+    gpu-dlls = libsrv_um.so libpvr2d.so pvrsrv.so
+    gpu-string = SGX540rev120
+    aperture = 200
+  end egl display
+  
+  begin wfd device 1
+    wfd-dlls = libwfdcfg-generic.so libWFDjacinto6.so
+
+    # Pipeline/display binding
+    # 1 = main display (hdmi) 
+    # 2 = second display (lcd1)
+    # 4 = third display (lcd3-fpd)
+    video1 = 2 
+    video2 = 2
+    video3 = 4
+    gfx = 4
+    debug_lvl = 0
+
+  end wfd device
+
+end khronos
+
+begin winmgr
+
+  begin globals
+    blit-config = pvr2d
+    blits-logsize = 4096
+    input-logsize = 8192
+    requests-logsize = 65536
+    input = gamepad
+    input = keyboard
+    input = mouse
+  end globals
+
+
+  begin display 1
+    formats = rgba8888 rgbx8888 nv12
+    video-mode = 1280 x 720 @ 60
+    #rotation = 270
+    cursor = auto
+  end display
+
+  begin display 2
+    formats = rgba8888 rgbx8888 nv12
+    video-mode = 1280 x 800 @ 60
+    #video-mode = 1920 x 1200 @ 50
+    #rotation = 270
+    cursor = auto
+  end display
+  
+  begin display 4
+    formats = rgba8888 rgbx8888 nv12
+    video-mode = 958 x 720 @ 30
+    cursor = auto
+  end display
+
+  begin class framebuffer
+    display = 2
+    #display = 1
+    pipeline = 1
+    format = rgba8888
+    usage = pvr2d
+  end class
+
+  begin mtouch
+    #driver = devi
+    #options = height=1280,width=800,poll=1000
+    driver = atmel-j6
+    #options = i2c_devname=/dev/i2c3,i2c_slave=0x5b,reset_gpio_base_addr=0x48055000,reset_gpio_pin=30,tp_intr=1072,reset_delay=1000,reset_recovery_delay=65000,config_file=mtouch.conf
+    options = i2c_devname=/dev/i2c3,i2c_slave=0x4a,reset_gpio_base_addr=0x48055000,reset_gpio_pin=30,tp_intr=1072,reset_delay=1000,reset_recovery_delay=65000,config_file=mtouch.conf
+  end mtouch 
+
+end winmgr

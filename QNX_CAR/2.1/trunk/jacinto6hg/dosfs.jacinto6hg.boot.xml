@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileset name="dosfs.jacinto6hg.boot">
+  <file name="MLO" uid="root" gid="nto" mode="0755"/>
+  <file name="qnx-ifs" uid="root" gid="nto" mode="0644"/>
+</fileset>

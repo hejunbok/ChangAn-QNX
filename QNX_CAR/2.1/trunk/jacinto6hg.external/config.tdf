@@ -1,0 +1,5 @@
+VERSION="1.0.0"
+CPU="armle-v7"
+BOARD="jacinto6hg"
+BOARD_CONFIG="test"
+INCLUDE_QNX_TARGET="TRUE"
