@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this is based SLM configutation file on panda board -->
+<SLM:system>
+
+	<!--setup various of symlinks, and those are blocking call, the following 3 sets can take 1~2 secs if using shell script, in slm builtin func, it's < 5ms -->
+    <SLM:component name="symlink_base">
+	  <SLM:command launch="builtin">pathmgr_symlink</SLM:command>
+	  <SLM:args>/base /qnx_car2; /base/bin /bin; /base/sbin /sbin; /base/lib /lib; /base/usr /usr; /base/opt /opt; /base/etc /etc; /base/appinstall /appinstall; /base/scripts /scripts</SLM:args>
+    </SLM:component>
+
+    <SLM:component name="symlink_etc">
+	  <SLM:command launch="builtin">pathmgr_symlink</SLM:command>
+	  <SLM:args>/var/etc/id /base/etc/id; /var/etc/dhcpd_urndis.leases /base/etc/dhcpd_urndis.leases; /var/etc/dhcpd_usbdnet.leases /base/etc/dhcpd_usbdnet.leases; /var/etc/iked.conf wpa_pps.conf /base/etc/iked.conf wpa_pps.conf; /var/etc/wpa_supplicant.conf /base/etc/wpa_supplicant.conf; /var/etc/system/config/audio /base/etc/system/config/audio; /var/etc/system/config/debug_host.conf /base/etc/system/config/debug_host.conf; /var/etc/system/config/calib.localhost /base/etc/system/config/calib.localhost; /var/etc/ssh /base/etc/ssh; /var/etc/www /base/etc/www</SLM:args>
+    </SLM:component>
+
+    <SLM:component name="symlink_hmi">
+	  <SLM:command launch="builtin">pathmgr_symlink</SLM:command>
+	  <SLM:args>/base/usr/hmi/common /apps/common; /var/webplatform /base/usr/share/webplatform; /apps /var/webplatform/apps</SLM:args>
+   </SLM:component>   
+
+    <SLM:component name="symlink_wifi">
+          <SLM:command launch="builtin">pathmgr_symlink</SLM:command>
+          <SLM:args>/var/etc/ap_pps_mhs.conf /base/etc/ap_pps_mhs.conf; /var/etc/wpa_pps.conf /base/etc/wpa_pps.conf; /var/etc/wpa_supplicant.conf /base/etc/wpa_supplicant.conf</SLM:args>
+   </SLM:component>
+
+    <SLM:component name="pps">
+	    <SLM:command>/base/scripts/setup-pps.sh</SLM:command>
+        <SLM:args></SLM:args>
+	<SLM:waitfor wait="exits"></SLM:waitfor>
+    </SLM:component>
+
+   <SLM:component name="qdb">
+        <SLM:command>qdb</SLM:command>
+	<SLM:args>-v -A -c /pps/qnx/qdb</SLM:args>
+	<SLM:waitfor wait="pathname">/dev/qdb</SLM:waitfor>
+ 	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>pps</SLM:depend>
+   </SLM:component>
+
+   <SLM:component name="iopkt">
+ 	<SLM:command>io-pkt-v6-hc</SLM:command>
+	<SLM:args>-ptcpip stacksize=8192</SLM:args>
+	<SLM:waitfor wait="pathname">/dev/socket</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+   </SLM:component>
+   
+   <SLM:component name="ethernet">
+	<SLM:command>/base/scripts/ethernet.sh</SLM:command>
+	<SLM:args></SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>iopkt</SLM:depend>
+   </SLM:component>   
+
+    <SLM:component name="symtem_hmi">
+	  <SLM:command launch="builtin">system</SLM:command>
+	  <SLM:args>chmod -R a+w /apps/com.Scout.*/native/;echo "super::hack" >> /pps/services/bluetooth/remote_devices/..sss;echo "super::hack" >> /pps/services/bluetooth/paired_devices/..sss</SLM:args>
+	  <SLM:depend>symlink_hmi</SLM:depend>
+   </SLM:component>   
+
+<!--
+     <SLM:component name="dumper">
+        <SLM:command>dumper</SLM:command>
+	<SLM:args>-S -F -d /dev/shmem -t -m -s1M -b</SLM:args>
+ 	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+   </SLM:component>
+-->
+
+   <SLM:component name="authman">
+        <SLM:command>authman</SLM:command>
+	<SLM:args>-U 505</SLM:args>
+	<SLM:waitfor wait="pathname">/dev/authman</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>pps</SLM:depend>
+   </SLM:component>
+    
+    <SLM:component name="coreservices">
+        <SLM:command>coreServices</SLM:command>
+	<SLM:args></SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:waitfor wait="pathname">/pps/services/useralarm/control</SLM:waitfor>
+	<SLM:depend>pps</SLM:depend>
+	<SLM:depend>authman</SLM:depend>
+   </SLM:component>
+
+    <SLM:component name="navemenu">
+	  <SLM:command>/base/scripts/update_nav.sh</SLM:command>
+	<SLM:args></SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>pps</SLM:depend>
+	<SLM:depend>authman</SLM:depend>
+   </SLM:component>
+
+  <SLM:component name="launcher">
+        <SLM:command>/base/scripts/launcher-start.sh</SLM:command>
+        <SLM:args></SLM:args>
+	<SLM:waitfor wait="pathname">/pps/services/launcher/control</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>coreservices</SLM:depend>
+	<SLM:depend>iopkt</SLM:depend>
+	<SLM:depend>authman</SLM:depend>
+	<SLM:depend>pps</SLM:depend>
+   </SLM:component>
+
+  <!--SLM:component name="bslauncher">
+	<SLM:command>bslauncher</SLM:command>
+	<SLM:args>-L -c /var/etc/system/config/bslauncher.cfg</SLM:args>
+	<SLM:waitfor wait="pathname">/pps/system/bslauncher</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>launcher</SLM:depend>
+	<SLM:depend>authman</SLM:depend>
+	<SLM:depend>pps</SLM:depend>
+   </SLM:component-->
+
+    <SLM:component name="keyboard">
+        <SLM:command>keyboard-imf</SLM:command>
+	<SLM:args>-U 99:0 -d hdmi</SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>pps</SLM:depend>
+   </SLM:component>  
+
+    <!-- SLM:component name="tracelogger">
+        <SLM:command>tracelogger</SLM:command>
+	<SLM:args>-w -c -k8192 -S60M -M</SLM:args>
+	<SLM:depend>hmi</SLM:depend>
+   </SLM:component -->
+
+   
+   <SLM:component name="devc-pty">
+        <SLM:command>devc-pty</SLM:command>
+	<SLM:args></SLM:args>
+        <SLM:waitfor wait="pathname">/dev/ttyp0</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>hmi</SLM:depend>
+   </SLM:component>
+
+   <SLM:component name="certmgr">
+        <SLM:command>certmgr_pps</SLM:command>
+	<SLM:args></SLM:args>
+        <SLM:waitfor wait="pathname">/pps/services/certmgr/control</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>pps</SLM:depend>
+	<SLM:depend>hmi</SLM:depend>
+   </SLM:component>   
+
+   <SLM:component name="certmgr-sh">
+	   <SLM:command>/base/scripts/startup-support/replace_dtm_cert.sh</SLM:command>
+	<SLM:args></SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>certmgr</SLM:depend>
+   </SLM:component>   
+
+   <SLM:component name="mcd">
+        <SLM:command>mcd</SLM:command>
+	<SLM:args>/etc/mcd.conf</SLM:args>
+	<SLM:waitfor wait="pathname">/dev/mcd</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>hmi</SLM:depend>
+   </SLM:component>
+
+   <SLM:component name="enum-devices">
+        <SLM:command>enum-devices</SLM:command>
+	<SLM:args>-c /etc/system/enum/common</SLM:args>
+ 	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>mcd</SLM:depend>
+   </SLM:component>   
+
+   <SLM:component name="usbpub">
+        <SLM:command>usbpub</SLM:command>
+	<SLM:args>-B -f /dev/umass:/fs -m /pps/qnx -p 2 -l -s /lib/dll/pubs/</SLM:args>
+	<SLM:waitfor wait="pathname">/pps/qnx/mount</SLM:waitfor>
+ 	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>enum-devices</SLM:depend>
+	<SLM:depend>pps</SLM:depend>
+   </SLM:component>
+
+   <SLM:component name="ioacoustic">
+	   <SLM:command>/base/sbin/io-acoustic</SLM:command>
+	<SLM:args>-c /etc/system/config/bluetooth/acoustic_mono_mics.conf</SLM:args>
+ 	<!-- SLM:waitfor wait="pathname">/dev/io-acoustic</SLM:waitfor -->
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>io-audio_mcbsp</SLM:depend>
+   </SLM:component>
+
+   <SLM:component name="sudUpdater">
+	<SLM:command>/base/scripts/updater-start.sh</SLM:command>
+	<SLM:args></SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>authman</SLM:depend>
+	<SLM:depend>navemenu</SLM:depend>
+	<SLM:depend>coreservices</SLM:depend>
+	<SLM:depend>pps</SLM:depend>
+  </SLM:component>
+  
+   <SLM:component name="updateMgr">
+	   <SLM:command>/base/usr/sbin/updateMgr</SLM:command>
+	<SLM:args>-v -V</SLM:args>
+    <SLM:stdout>/var/log/updateMgr/stdout</SLM:stdout>
+    <SLM:stderr>/var/log/updateMgr/stderr</SLM:stderr>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>mcd</SLM:depend>
+   </SLM:component>
+
+<!--
+   <SLM:component name="nodejs">
+	<SLM:command>/base/scripts/node_js.sh</SLM:command>
+	<SLM:args></SLM:args>
+        <SLM:waitfor wait="exits"></SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>pps</SLM:depend>
+  </SLM:component>
+-->
+
+<!--
+   <SLM:component name="pps-mixer">
+        <SLM:command>pps-mixer</SLM:command>
+	<SLM:args></SLM:args>
+ 	<SLM:waitfor wait="pathname">/pps/services/audio/devices</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>io-audio_mcbsp</SLM:depend>
+	<SLM:depend>pps</SLM:depend>
+   </SLM:component>
+-->
+
+   <SLM:component name="audioman">
+	  <SLM:command>audioman</SLM:command>
+	  <SLM:args>-r 1</SLM:args>
+	  <SLM:waitfor wait="pathname">/pps/services/audio/devices</SLM:waitfor>
+	  <SLM:stop stop="signal">SIGTERM</SLM:stop>
+	  <SLM:depend>io-audio_mcbsp</SLM:depend>
+	  <SLM:depend>pps</SLM:depend>
+   </SLM:component>
+
+   <SLM:component name="mixer-volume">
+	  <SLM:command launch="builtin">system</SLM:command>
+	  <SLM:args>/base/usr/bin/mix_ctl group PCM volume=100%</SLM:args>
+	  <SLM:depend>audioman</SLM:depend>
+   </SLM:component>   
+
+   <SLM:component name="hci">
+        <SLM:command>devc-seromap_hci</SLM:command>
+	<SLM:args>-E -f -a -g0x48055000,46 -c48000000/16 0x4806c000^2,105</SLM:args>
+	<SLM:waitfor wait="pathname">/dev/serbt1</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+   </SLM:component>
+
+   <SLM:component name="bluetooth">
+        <SLM:command>io-bluetooth</SLM:command>
+	<SLM:args>-vvvvv</SLM:args>
+	<SLM:waitfor wait="pathname">/dev/io-bluetooth/btmgr</SLM:waitfor>
+	<SLM:stdout>/var/log/bluegotester/stdout</SLM:stdout>
+	<SLM:stderr>/var/log/bluegotester/stderr</SLM:stderr>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>hci</SLM:depend>
+	<SLM:depend>ioacoustic</SLM:depend>
+	<SLM:depend>qdb</SLM:depend>
+	<SLM:depend>pps</SLM:depend>
+   </SLM:component>   
+
+   <SLM:component name="pps-bluetooth">
+        <SLM:command>pps-bluetooth</SLM:command>
+	<SLM:args>-vvvvv</SLM:args>
+ 	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>bluetooth</SLM:depend>
+	<SLM:depend>pps</SLM:depend>
+   </SLM:component>
+   
+   <SLM:component name="pps-bluetooth-initiator">
+	<SLM:command>/base/scripts/bluetooth_initial_sync_initiator.sh</SLM:command>
+	<SLM:args></SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>pps-bluetooth</SLM:depend>
+   </SLM:component>
+
+   <SLM:component name="mmrenderer">
+        <SLM:command>mm-renderer</SLM:command>
+	<SLM:args>-c -U 520</SLM:args>
+ 	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>io-audio_mcbsp</SLM:depend>
+	<SLM:depend>audioman</SLM:depend>
+   </SLM:component>
+
+   <SLM:component name="mmsync">
+        <SLM:command>mm-sync</SLM:command>
+	<SLM:args>-D -c /etc/mmsync_car2.conf</SLM:args>
+	<SLM:waitfor wait="pathname">/dev/mmsync</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>qdb</SLM:depend>
+   </SLM:component>   
+
+   <SLM:component name="artwork">
+        <SLM:command>artwork_client_car2</SLM:command>
+        <SLM:args>-p /apps/mediasources/imagecache/ -c /apps/mediasources/imagecache/ -t</SLM:args>
+        <SLM:stop stop="signal">SIGTERM</SLM:stop>
+	    <SLM:depend>qdb</SLM:depend>
+	    <SLM:depend>mmsync</SLM:depend>
+	    <SLM:depend>pps</SLM:depend>
+	    <SLM:depend>mmrenderer</SLM:depend>
+   </SLM:component>
+
+   <SLM:component name="mmdetect">
+        <SLM:command>mm-detect</SLM:command>
+	<SLM:args>-v</SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>mmsync</SLM:depend>
+	<SLM:depend>artwork</SLM:depend>
+	<SLM:depend>usbpub</SLM:depend>
+   </SLM:component>
+
+    <!-- this is a hack, we need to create this file upfront-->
+
+    <SLM:component name="system_mme">
+	  <SLM:command launch="builtin">system</SLM:command>
+	  <SLM:args>echo "id::mme\nmount::/accounts/1000/shared/\nname::Juke Box\ndevice_type::hdd\nfs_type::qnx\n" > /pps/qnx/mount/mme?nopersist</SLM:args>
+	  <SLM:depend>mmdetect</SLM:depend>
+   </SLM:component>   
+
+   <SLM:component name="mmtrkmgr">
+        <SLM:command>mm-trkmgr</SLM:command>
+	<SLM:args>-v</SLM:args>
+	<SLM:waitfor wait="pathname">/dev/trkmgr</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+   </SLM:component>   
+
+   <SLM:component name="mmcontrol">
+        <SLM:command>mm-control</SLM:command>
+	<SLM:args>-v -c /etc/mm-control.cfg</SLM:args>
+	<SLM:waitfor wait="pathname">/pps/services/mm-control/control</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>mmtrkmgr</SLM:depend>
+	<SLM:depend>mmrenderer</SLM:depend>
+   </SLM:component>
+
+   <SLM:component name="asr">
+        <SLM:command>io-asr-generic</SLM:command>
+	<SLM:args>-c /etc/asr-car.cfg</SLM:args>
+ 	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>pps</SLM:depend>
+	<SLM:depend>io-audio_mcbsp</SLM:depend>
+   </SLM:component>
+
+    <SLM:component name="tcsnav">
+	<SLM:command>/base/scripts/start-tcsnav.sh</SLM:command>
+	<SLM:args></SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>hmi</SLM:depend>
+    </SLM:component> 
+
+    <SLM:component name="ebnav">
+	<SLM:command>/base/scripts/ebnav-start.sh</SLM:command>
+	<SLM:args></SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>hmi</SLM:depend>
+    </SLM:component> 
+
+    <SLM:component name="resarb">
+    <SLM:command>resarb</SLM:command>
+    <SLM:args></SLM:args>
+    <SLM:stop stop="signal">SIGTERM</SLM:stop>
+    </SLM:component>
+
+   <SLM:component name="qconn">
+        <SLM:command>qconn</SLM:command>
+	<SLM:args></SLM:args>
+ 	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>ethernet</SLM:depend>
+   </SLM:component>
+    
+   <SLM:component name="inetd">
+        <SLM:command>inetd</SLM:command>
+	<SLM:args></SLM:args>
+ 	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>ethernet</SLM:depend>
+   </SLM:component>
+
+    <SLM:component name="ssh">
+	<SLM:command>/base/scripts/ssh-start.sh</SLM:command>
+	<SLM:args></SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>ethernet</SLM:depend>
+    </SLM:component> 
+
+    <SLM:component name="net_configured">
+	<SLM:command>if_up</SLM:command>
+	<SLM:args>-r 60 -s 2 en0</SLM:args>
+	<SLM:depend>ethernet</SLM:depend>
+	<SLM:waitfor wait="exits"></SLM:waitfor>
+    </SLM:component> 
+	
+    <SLM:component name="dlna">
+	  <SLM:command>/base/scripts/dlna-start.sh</SLM:command>
+	  <SLM:args></SLM:args>
+	  <SLM:depend>net_configured</SLM:depend>
+    </SLM:component>
+         
+    <SLM:component name="settime">
+        <SLM:command>/base/scripts/setdate.sh</SLM:command>
+        <SLM:args></SLM:args>
+        <SLM:depend>net_configured</SLM:depend>
+	<SLM:waitfor wait="exits"></SLM:waitfor>
+    </SLM:component>
+    	
+    <SLM:component name="setup_hmi">
+        <SLM:command>/base/scripts/hmi-start.sh</SLM:command>
+        <SLM:args></SLM:args>
+        <SLM:waitfor wait="exits"></SLM:waitfor>
+        <SLM:depend>net_configured</SLM:depend>
+    </SLM:component>
+    
+    <SLM:component name="hmi">
+        <SLM:command>/usr/bin/weblauncher</SLM:command>
+	<SLM:args>/accounts/1000/appdata/car.navigator/app/native/wwe</SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:envvar>HOME=/accounts/1000/appdata/car.navigator/data</SLM:envvar>
+        <SLM:stdout>/var/log/hmi/weblauncher.stdout</SLM:stdout>
+        <SLM:stderr>/var/log/hmi/weblauncher.stderr</SLM:stderr>
+	<SLM:depend>qdb</SLM:depend>
+	<SLM:depend>iopkt</SLM:depend>
+	<SLM:depend>setup_hmi</SLM:depend>
+	<SLM:depend>symtem_hmi</SLM:depend>
+	<SLM:depend>launcher</SLM:depend>
+	<!-- Workaround - mmcontrol needs to be up before HMI for now, PR214507 -->
+	<SLM:depend>mmcontrol</SLM:depend>
+	<SLM:depend>keyboard</SLM:depend>
+	<SLM:depend>settime</SLM:depend>
+    </SLM:component>   
+
+    <!-- VARIANT SPECIFIC ENTRIES -->
+
+   <SLM:component name="io-audio_mcbsp">
+        <SLM:command>io-audio</SLM:command>
+	<SLM:args>-d mcbsp-omap4</SLM:args>
+        <SLM:waitfor wait="pathname">/dev/snd/pcmC1D0p</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+   </SLM:component>
+
+    <!-- syslink is a CPU eater, push it down -->
+   <SLM:component name="syslink-delay">
+        <SLM:command>sleep</SLM:command>
+        <SLM:args>120</SLM:args>
+        <SLM:waitfor wait="exits"></SLM:waitfor>
+        <SLM:stop stop="signal">SIGTERM</SLM:stop>
+   </SLM:component>
+
+    <SLM:component name="system_syslink">
+	  <SLM:command>/base/scripts/syslink_setup.sh</SLM:command>
+	  <SLM:args></SLM:args>
+        <SLM:waitfor wait="exits"></SLM:waitfor>
+	  <SLM:depend>syslink-delay</SLM:depend>	
+   </SLM:component>   
+
+   <SLM:component name="syslink">
+        <SLM:command>syslink</SLM:command>
+	<SLM:args></SLM:args>
+        <SLM:waitfor wait="pathname">/dev/syslink</SLM:waitfor>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>system_syslink</SLM:depend>	
+   </SLM:component>
+
+   <SLM:component name="syslink_daemon">
+        <SLM:command>syslink_daemon</SLM:command>
+	<SLM:args>/lib/firmware/ducati/Notify_MPUSYS_reroute_Test_Core0.xem3 /lib/firmware/ducati/base_image_app_m3.xem3</SLM:args>
+	<SLM:stop stop="signal">SIGTERM</SLM:stop>
+	<SLM:depend>syslink</SLM:depend>
+   </SLM:component>
+
+</SLM:system>
+

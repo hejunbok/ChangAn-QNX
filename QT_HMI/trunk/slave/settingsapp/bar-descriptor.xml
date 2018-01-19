@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<qnx xmlns="http://www.qnx.com/schemas/application/1.0">
+    <id>Settings</id>
+    <name>Settings</name>
+    <versionNumber>1.0.0</versionNumber>
+    <buildId>1</buildId>
+    <description>Settings application</description>
+    <author>QNX</author>
+    <initialWindow>
+        <autoOrients>true</autoOrients>
+        <systemChrome>none</systemChrome>
+        <transparent>false</transparent>
+    </initialWindow>
+    <category>vehicle</category>
+    <asset path="settingsapp" entry="true" type="Qnx/Elf">bin/settingsapp</asset>
+    <icon>
+       <image>icon.png</image>
+    </icon>
+    <permission system="true">run_native</permission>
+    <permission system="true">configure_system</permission>
+    <env var="QQNX_PHYSICAL_SCREEN_SIZE" value="150,90"/>
+    <env var="QNXCAR2_ASSETS_DIR" value="app/native/share/qnxcar2"/>
+</qnx>

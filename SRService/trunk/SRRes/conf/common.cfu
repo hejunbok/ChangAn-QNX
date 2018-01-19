@@ -1,0 +1,20 @@
+[resource]
+path = resource
+default_pack = common
+
+[resource\common]
+name = common
+description = common package
+path = common
+rcreload = 0
+
+[resource\common\dialog\dialog_control]
+name = dialog_control
+file = dialog\dialog_control.xml
+mode = 1
+extension = {"history_length" : "3"}
+
+[resource\common\basicphrase\basicphrase]
+name = grammar
+file = basicphrase\basicphrase.gram
+mode = 1

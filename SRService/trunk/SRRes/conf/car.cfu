@@ -1,0 +1,5 @@
+[resource\car]
+name = car
+description = car package
+path = car
+rcreload = 0

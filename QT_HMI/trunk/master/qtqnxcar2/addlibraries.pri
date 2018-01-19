@@ -1,0 +1,15 @@
+SOURCE_ROOT = $$PWD
+
+DEPENDPATH += $${SOURCE_ROOT}/../qpps/
+INCLUDEPATH += $${SOURCE_ROOT}/../qpps/
+win32: LIBPATH += $$BUILD_ROOT/bin/
+else: LIBPATH += $$BUILD_ROOT/lib/
+QMAKE_RPATHDIR += $${BUILD_ROOT}/lib/
+LIBS += -lqpps
+
+DEPENDPATH += $${SOURCE_ROOT}/qtqnxcar2
+INCLUDEPATH += $${SOURCE_ROOT}/qtqnxcar2
+win32: LIBPATH += $$BUILD_ROOT/bin/
+else: LIBPATH += $$BUILD_ROOT/lib/
+QMAKE_RPATHDIR += $${BUILD_ROOT}/lib
+LIBS += -lqtqnxcar2

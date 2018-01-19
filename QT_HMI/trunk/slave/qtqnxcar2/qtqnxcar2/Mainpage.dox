@@ -1,0 +1,86 @@
+/*!
+
+ @mainpage QtQnxCar2 Reference Documentation
+
+ QtQnxCar2 is a Qt library for creating applications on the QNX/Car2 platform. The library provides
+ domain-specific wrappers for system facilities such as PPS objects provided by QNX Car.
+
+ These facilities are:
+  - @ref main_app_launching
+  - @ref main_media_playback
+  - @ref main_bluetooth
+  - @ref main_keyboard
+  - @ref main_navigation
+  - @ref main_settings
+
+ A reference of the available PPS objects is available as part of the
+ @link http://www.qnx.com/developers/docs/qnxcar2/index.jsp QNX Car platform documentation @endlink.
+
+ @section main_app_launching Application launching
+
+ The following classes implement starting, stopping and listing of applications:
+ - QnxCar::Launcher Allows to start and stop external applications
+ - QnxCar::ApplicationListModel Model listing available applications
+    - List can be filtered using QnxCar::ApplicationFilterModel on top of it
+
+ @section main_media_playback Audio and Video playback
+
+ The following classes implement listing media files and controlling playback (mm-renderer).
+
+ Media file handling is provided through Qt item models, enabling direct user interaction through
+ QtQuick UI controls:
+
+ - QnxCar::AlbumsModel Model for listing albums from a media player source database
+ - QnxCar::ArtistsModel Model for listing available artists from a media player source database
+ - QnxCar::GenresModel Model for listing the available genres from a media player source database
+ - QnxCar::PlaylistModel Model for listing available playlists from a media player source database
+ - QnxCar::SearchModel Model for media search results
+ - QnxCar::SongsModel Model for listing songs from a media player source database
+ - QnxCar::SourcesModel A model that lists the available media sources
+ - QnxCar::VideosModel Model for accessing video data of a media player source database
+
+ Playback control is provided through classes whose instances can be exported to the QML engine
+ and so become available user interaction in QtQuick:
+
+ - QnxCar::AudioControl Access to audio settings (volume, etc)
+ - QnxCar::AudioPlayer Controls and monitors audio playback
+ - QnxCar::VideoPlayer Controls video playback
+
+ @section main_bluetooth Bluetooth
+
+ Bluetooth pairing and connection handling, including:
+   - Handsfree functionality (incoming and outgoing calls) of connected phones
+   - Synchronization of address book contacts, text and e-mail messages
+
+ - QnxCar::Bluetooth Bluetooth Configuration and connection handling
+    - Also provides lists od reachable and paired devices using QnxCar::BluetoothDevicesModel
+ - QnxCar::BluetoothServiceStatus Access to the connection and synchronization status of bluetooth services
+
+ @section main_keyboard On-screen keyboard integration
+
+ The status of the on-screen keyboard can be monitored through QnxCar::Keyboard
+
+ @section main_navigation Turn-by-turn navigation
+
+ The navigation system can be controlled and monitored through QnxCar::Navigation.
+
+ Locations to navigate to are provided through QnxCar::LocationModel, grouped into categories
+ accessible through QnxCar::LocationCategoryModel.
+
+ Previously visited locations can be retrieved through QnxCar::NavigationHistoryModel.
+
+ During navigation QnxCar::ManeuversModel can be used to provide turn-by-turn instructions
+ to the QtQuick user interface.
+
+ @section main_settings Vehicle settings (sensors, HVAC, etc.)
+
+ - QnxCar::Hvac Access to heating, ventilation and air conditioning
+ - QnxCar::Sensors Access to various sensors in the car
+
+*/
+
+/**
+ * Namespace for QtQnxCar2
+ */
+namespace QnxCar {
+}

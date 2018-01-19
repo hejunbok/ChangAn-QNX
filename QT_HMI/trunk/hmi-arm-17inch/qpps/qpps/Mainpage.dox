@@ -1,0 +1,71 @@
+/*!
+
+  \mainpage QPPS Reference Documentation
+
+ QPPS is a Qt API to PPS, the QNX Persistent Publish/Suscribe system.
+
+ PPS manages a hierarchical structure of PPS objects, accessible as files via the \c /pps directory tree
+ in the file system. Each PPS <em>object</em> (QPps::Object) holds key-value pairs called <em>attributes</em> (QPps::Attribute).
+ The PPS system allows changing attributes and subscribing to attribute changes in a
+ structured way. The state of a PPS object is saved across reboots by default.
+
+ More details on PPS can be found in the \link http://support7.qnx.com/download/download/20980/pps_book.pdf PPS Book\endlink.
+
+ \section example1 Example 1: Subscription to Status Object
+
+ The following example demonstrates read-only access to a status object. Let's assume @c /pps/service/ethernet/status contains the
+ connection status of the ethernet network interface, looking like this:
+
+ \code
+@ethernet
+connected:b:true
+ip_address:s:192.168.1.100
+netmask:s:255.255.255.0
+gateway:s:192.168.1.1
+ \endcode
+
+ To monitor that PPS object, create a business logic object containing a QPps::Object \c m_ppsObject to monitor \c{/pps/services/ethernet/status}:
+ \code
+Ethernet::Ethernet(QObject* parent)
+    : QObject(parent)
+{
+    m_ppsObject = new QPps::Object(QStringLiteral("/pps/services/ethernet/status"),
+                                   PpsObject::SubscribeMode, true, this);
+    if (m_ppsObject->isValid()) {
+        //enable caching of attribute values. This reads the current content of the file into memory
+        m_ppsObject->setAttributeCacheEnabled(true);
+        //Connect to attribute changes
+        connect(m_ppsObject, SIGNAL(attributeChanged(QString,QPps::Variant)),
+                this, SLOT(ppsAttributeChanged(QString,QPps::Variant)));
+
+        // Read initial status into own variables
+        m_connected = m_ppsObject->attribute(QStringLiteral("connected")).toBool();
+        m_ipAddress = m_ppsObject->attribute(QStringLiteral("ip_address")).toString();
+        m_netmask = m_ppsObject->attribute(QStringLiteral("netmask")).toString();
+        m_gateway = m_ppsObject->attribute(QStringLiteral("gateway")).toString();
+    } else {
+        //Handle error, use m_ppsObject->errorString()
+    }
+}
+ \endcode
+
+ The slot ppsAttributeChanged() could be implemented like this:
+
+ \code
+void Ethernet::ppsAttributeChanged(const QString& name, const QPps::Variant& value) {
+    if (name == QStringLiteral("connected")) {
+        m_connected = value.toBool();
+        emit connectedChanged(); //notify property change
+    } else if (name == QStringLiteral("ip_address")) {
+        ...
+    }
+    ...
+}
+ \endcode
+*/
+
+/**
+ * Namespace for QPPS
+ */
+namespace QPps {
+}

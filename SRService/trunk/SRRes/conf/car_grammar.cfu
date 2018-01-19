@@ -1,0 +1,95 @@
+[resource\car\grammar\air_control-car-autofly1]
+name = grammar
+file = grammar\air_control-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\app-car-autofly1]
+name = grammar
+file = grammar\app-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\car_control-car-autofly1]
+name = grammar
+file = grammar\car_control-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\cmd-car-autofly1]
+name = grammar
+file = grammar\cmd-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\flight-car-autofly1]
+name = grammar
+file = grammar\flight-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\help-car-autofly1]
+name = grammar
+file = grammar\help-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\help-car-common]
+name = grammar
+file = grammar\help-car-common.gram
+mode = 1
+
+[resource\car\grammar\itemselect-car-autofly1]
+name = grammar
+file = grammar\itemselect-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\lbs-car-autofly1]
+name = grammar
+file = grammar\lbs-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\map-car-autofly1]
+name = grammar
+file = grammar\map-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\microblog-car-autofly1]
+name = grammar
+file = grammar\microblog-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\music-car-autofly1]
+name = grammar
+file = grammar\music-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\news-car-autofly1]
+name = grammar
+file = grammar\news-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\radio-car-autofly1]
+name = grammar
+file = grammar\radio-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\schedule-car-autofly1]
+name = grammar
+file = grammar\schedule-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\traffic-car-autofly1]
+name = grammar
+file = grammar\traffic-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\vehicle_info-car-autofly1]
+name = grammar
+file = grammar\vehicle_info-car-autofly1.gram
+mode = 1
+
+[resource\car\grammar\weather-car-autofly1]
+name = grammar
+file = grammar\weather-car-autofly1.gram
+mode = 1
+
+[resource\car\grammardict\car_app_name-car-common]
+name = grammardict
+file = grammardict\car_app_name-car-common.dic
+mode = 1
+

@@ -1,0 +1,52 @@
+<!-- flag = iflytek_nlu_res, type = dialog_control, name = dialog_control.xml, version = 1000, lang = cn_simplified, -->
+<?xml version="1.0" encoding="GBK"?>
+
+<dialog_control>
+
+	<focus name="flight" grammar="gc_flight">
+		<rule condition="hist[0].opera=query*!hist[0].param:city:end">
+			<prompt weight = 100 grammar="tc_flight_to_city">您从{hist[0].param:city:start}出发，想到哪个城市呢？（出发时间：{hist[0].param:date}）</prompt>
+			<prompt weight = 99 grammar="tc_flight_to_city">您从{hist[0].param:city:start}出发，想到哪个城市呢？</prompt>
+			<prompt weight = 98 grammar="tc_flight_to_city">您想到哪个城市呢？（出发时间：{hist[0].param:date}）</prompt>
+			<prompt weight = 1 grammar="tc_flight_to_city">您想到哪个城市呢？</prompt>
+		</rule>
+		<rule condition="hist[0].opera=query*!hist[0].param:city:start">
+			<prompt weight = 10 grammar="tc_flight_from_city">您从哪里出发到{hist[0].param:city:end}呢？</prompt>
+			<prompt weight = 1 grammar="tc_flight_from_city">您从哪里出发呢？</prompt>
+		</rule>
+		<rule condition="hist[0].opera=query*!hist[0].param:date">
+			<prompt weight = 100 grammar="tc_flight_date">您想什么时间，从{hist[0].param:city:start}出发到{hist[0].param:city:end}呢？</prompt>
+			<prompt weight = 99 grammar="tc_flight_date">您想什么时间，到{hist[0].param:city:end}呢？</prompt>
+			<prompt weight = 98 grammar="tc_flight_date">您想什么时间，从{hist[0].param:city:start}出发呢？</prompt>
+			<prompt weight = 1 grammar="tc_flight_date">您查询哪天的航班呢？</prompt>
+		</rule>
+	</focus>
+	
+	<focus name="train" grammar="gc_train">
+		<rule condition="hist[0].opera=query*!hist[0].param:city:end">
+			<prompt weight = 100 grammar="tc_train_to_city">您从{hist[0].param:city:start}出发，想到哪个城市呢？（出发时间：{hist[0].param:date}）</prompt>
+			<prompt weight = 99 grammar="tc_train_to_city">您从{hist[0].param:city:start}出发，想到哪个城市呢？</prompt>
+			<prompt weight = 98 grammar="tc_train_to_city">您想到哪个城市呢？（出发时间：{hist[0].param:date}）</prompt>
+			<prompt weight = 1 grammar="tc_train_to_city">您想到哪个城市呢？</prompt>
+		</rule>
+	</focus>
+	
+	<focus name="weather" grammar="gc_weather">
+	</focus>
+
+	<focus name="stock" grammar="gc_stock">
+		<rule condition="hist[0].opera=query*!hist[0].param:name*!hist[0].param:code">
+			<prompt weight = 100 grammar="tc_stock">您想查询哪支股票呢？</prompt>
+		</rule>
+	</focus>
+
+	<focus name="schedule" grammar="gc_schedule">
+		<rule condition="hist[0].opera=create * !hist[0].param:date * !hist[0].param:date:start * !hist[0].param:date:end * !hist[0].param:time * !hist[0].param:time:start * !hist[0].param:time:end">
+			<prompt weight = 100 grammar="tc_schedulet_date">请问在哪天的几点钟提醒您？</prompt>
+		</rule>
+		<rule condition="hist[0].opera=create * !hist[0].param:time * !hist[0].param:time:start * !hist[0].param:time:end">
+			<prompt weight = 100 grammar="tc_schedulet_date">请问在几点钟提醒您？</prompt>
+		</rule>
+	</focus>
+</dialog_control>
+<!-- iflytek_nlu_res_end-->

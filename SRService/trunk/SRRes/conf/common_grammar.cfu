@@ -1,0 +1,185 @@
+[resource\common\grammar\contacts-common]
+name = grammar
+file = grammar\contacts-common.gram
+mode = 1
+
+[resource\common\grammar\flight-common]
+name = grammar
+file = grammar\flight-common.gram
+mode = 1
+
+[resource\common\grammar\message-common]
+name = grammar
+file = grammar\message-common.gram
+mode = 1
+
+[resource\common\grammar\microblog-common]
+name = grammar
+file = grammar\microblog-common.gram
+mode = 1
+
+[resource\common\grammar\music-common]
+name = grammar
+file = grammar\music-common.gram
+mode = 1
+
+[resource\common\grammar\radio-common]
+name = grammar
+file = grammar\radio-common.gram
+mode = 1
+
+[resource\common\grammar\restaurant-common]
+name = grammar
+file = grammar\restaurant-common.gram
+mode = 1
+
+[resource\common\grammar\stock-common]
+name = grammar
+file = grammar\stock-common.gram
+mode = 1
+
+[resource\common\grammar\telephone-common]
+name = grammar
+file = grammar\telephone-common.gram
+mode = 1
+
+[resource\common\grammar\train-common]
+name = grammar
+file = grammar\train-common.gram
+mode = 1
+
+[resource\common\grammar\weather-common]
+name = grammar
+file = grammar\weather-common.gram
+mode = 1
+
+[resource\common\grammardict\adr_suffix-common]
+name = grammardict
+file = grammardict\adr_suffix-common.dic
+mode = 1
+
+[resource\common\grammardict\airlines_name-common]
+name = grammardict
+file = grammardict\airlines_name-common.dic
+mode = 1
+
+[resource\common\grammardict\airport_name-common]
+name = grammardict
+file = grammardict\airport_name-common.dic
+mode = 1
+
+[resource\common\grammardict\album_name-common]
+name = grammardict
+file = grammardict\album_name-common.dic
+mode = 1
+
+[resource\common\grammardict\app_name-common]
+name = grammardict
+file = grammardict\app_name-common.dic
+mode = 1
+
+[resource\common\grammardict\broadcast_name-common]
+name = grammardict
+file = grammardict\broadcast_name-common.dic
+mode = 1
+
+[resource\common\grammardict\city_info-common]
+name = grammardict
+file = grammardict\city_info-common.dic
+mode = 1
+
+[resource\common\grammardict\city_info_sel-common]
+name = grammardict
+file = grammardict\city_info_sel-common.dic
+mode = 1
+
+[resource\common\grammardict\flight_code-common]
+name = grammardict
+file = grammardict\flight_code-common.dic
+mode = 1
+
+[resource\common\grammardict\foreign_city_info-common]
+name = grammardict
+file = grammardict\foreign_city_info-common.dic
+mode = 1
+
+[resource\common\grammardict\hot_news-common]
+name = grammardict
+file = grammardict\hot_news-common.dic
+mode = 1
+
+[resource\common\grammardict\main_dict]
+name = grammardict
+file = grammardict\main_dict.dic
+mode = 1
+
+[resource\common\grammardict\music_name-common]
+name = grammardict
+file = grammardict\music_name-common.dic
+mode = 1
+
+[resource\common\grammardict\music_nameonly-common]
+name = grammardict
+file = grammardict\music_nameonly-common.dic
+mode = 1
+
+[resource\common\grammardict\relative_name-common]
+name = grammardict
+file = grammardict\relative_name-common.dic
+mode = 1
+
+[resource\common\grammardict\restaurant_name-common]
+name = grammardict
+file = grammardict\restaurant_name-common.dic
+mode = 1
+
+[resource\common\grammardict\service_num-common]
+name = grammardict
+file = grammardict\service_num-common.dic
+mode = 1
+
+[resource\common\grammardict\sight_spot-common]
+name = grammardict
+file = grammardict\sight_spot-common.dic
+mode = 1
+
+[resource\common\grammardict\singer_name-common]
+name = grammardict
+file = grammardict\singer_name-common.dic
+mode = 1
+
+[resource\common\grammardict\station_name-common]
+name = grammardict
+file = grammardict\station_name-common.dic
+mode = 1
+
+[resource\common\grammardict\stock_code-common]
+name = grammardict
+file = grammardict\stock_code-common.dic
+mode = 1
+
+[resource\common\grammardict\stock_name-common]
+name = grammardict
+file = grammardict\stock_name-common.dic
+mode = 1
+
+[resource\common\grammardict\surname-common]
+name = grammardict
+file = grammardict\surname-common.dic
+mode = 1
+
+[resource\common\grammardict\top_name-common]
+name = grammardict
+file = grammardict\top_name-common.dic
+mode = 1
+
+[resource\common\grammardict\train_number-common]
+name = grammardict
+file = grammardict\train_number-common.dic
+mode = 1
+
+[resource\common\grammardict\website_name-common]
+name = grammardict
+file = grammardict\website_name-common.dic
+mode = 1
+

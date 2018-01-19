@@ -1,0 +1,34 @@
+<RCC>
+    <qresource prefix="/qnxcarui">
+        <file>qml/common/util.js</file>
+        <file>qml/common/BasicSprite.qml</file>
+        <file>qml/common/ButtonArea.qml</file>
+        <file>qml/common/DialArea.qml</file>
+        <file>qml/common/Dialog.qml</file>
+        <file>qml/common/DoubleLineListDelegate.qml</file>
+        <file>qml/common/DoubleLineListEntry.qml</file>
+        <file>qml/common/DropdownButton.qml</file>
+        <file>qml/common/Label.qml</file>
+        <file>qml/common/MatrixSprite.qml</file>
+        <file>qml/common/MediaProgressBar.qml</file>
+        <file>qml/common/MenuOverlayPane.qml</file>
+        <file>qml/common/MultiStateBasicSpriteButton.qml</file>
+        <file>qml/common/MultiStateMatrixSpriteButton.qml</file>
+        <file>qml/common/NavigatorGridElement.qml</file>
+        <file>qml/common/OverlayPane.qml</file>
+        <file>qml/common/PushButton.qml</file>
+        <file>qml/common/PushButtonFromImage.qml</file>
+        <file>qml/common/ScreenBackground.qml</file>
+        <file>qml/common/SearchField.qml</file>
+        <file>qml/common/SheetMenu.qml</file>
+        <file>qml/common/SheetMenuDelegate.qml</file>
+        <file>qml/common/SimpleListDelegate.qml</file>
+        <file>qml/common/SimpleListEntry.qml</file>
+        <file>qml/common/Spinner.qml</file>
+        <file>qml/common/SpriteButton.qml</file>
+        <file>qml/common/SpriteButtonTextAndImage.qml</file>
+        <file>qml/common/TitleTextAndImage.qml</file>
+        <file>qml/common/TouchDisabler.qml</file>
+        <file>qml/common/AlbumArtwork.qml</file>
+    </qresource>
+</RCC>
