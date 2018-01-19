@@ -1,0 +1,20 @@
+%C Driver for OMAP4430 SPI controllers
+
+Syntax:
+    spi-master -d omap4430 [option[,option ...]] ... &
+
+Options (to override autodetected defaults):
+
+    "base",         /* Base address for this CSPI controller */
+    "bitrate",      /* defines teh bitrate to to assigned to the spi */
+    "clock",        /* defined the value of the clock source of the SPI */
+    "channel",      /* defines the connected channel number (1,2,3, or 4) */
+    "irq",          /* IRQ for this CSPI intereface */
+    "force",        /* Force the default CSx level */
+    "num_cs"        /* number of support devices on this channel (default=1)*/
+    "sdma",         /* Disable/enable SDMA for SPI, 1:enable SDMA, 0:disable SDMA (default)*/ 
+    "cs_delay"     /* Disable/enable 1 1/2 clock CS to data delay, 0:no delay , 1:delay (default) */  
+Examples:
+    # Start McSPI driver with base address, IRQ and waitstates....
+    spi-master -u0 -d omap4430 base=0x4809A000,bitrate=125000,clock=48000000,irq=66,force=1,channel=2,sdma=1
+    

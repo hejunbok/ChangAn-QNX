@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<module name="devi-mxt224">
+  <classification>Driver</classification>
+  <description>
+    <short>Photon Input Manager for mxt224 Touchscreen controller</short>
+    <abstract><![CDATA[
+      
+        The devi-mxt224 is a Photon input manager for the TI mxt224 Touchscreen controllers.
+      
+    ]]></abstract>
+  </description>
+  <supports>
+    <availability>
+      <cpu isa="arm">
+        <byteOrder>le</byteOrder>
+      </cpu>
+    </availability>
+  </supports>
+  <contents>
+    <component id="mxt224" generated="true">
+      <location basedir="nto/arm/le">devi-mxt224</location>
+    </component>
+  </contents>
+  <requires>
+    <part build="false" location="hardware/devi"/>
+    <part build="true" rootMacro="DEVILIB_ROOT" location="hardware/devi/lib"/>
+    <part build="true" rootMacro="KEYMAP_ROOT" location="hardware/devi/keymap"/>
+  </requires>
+</module>

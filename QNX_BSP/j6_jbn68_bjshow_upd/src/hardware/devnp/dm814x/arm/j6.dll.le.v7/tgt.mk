@@ -1,0 +1,3 @@
+USEFILE=$(PROJECT_ROOT)/$(NAME)-j6.use
+
+override CCOPTS+= -DJ5_ECO -DJ6

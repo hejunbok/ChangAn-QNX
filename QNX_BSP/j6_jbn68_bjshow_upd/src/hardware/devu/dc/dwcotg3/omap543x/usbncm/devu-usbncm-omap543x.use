@@ -1,0 +1,20 @@
+%C Device Controller Driver for DesignWare USB3.0 OTG controller
+
+Featuring descriptors for a NCM device.
+
+Syntax:
+	io-usb-dcd -d usbser-omap543x-dwcotg3 [options]
+
+Options:
+    ioport=<addr>   register base address
+    irq=<num>       interrupt request number
+    verbose=<int>   set verbosity level to <int>
+    ser=<string>    override serial string descriptor
+    linkup          Assert "SOFT CONNECT".  Enables the target to be detected
+                    as soon as the device controller driver is loaded
+    linkdown        De-assert "SOFT-CONNECT".  The link must be manually 
+                    enabled once the entire USB subsystem is ready. (default) 
+
+Examples:
+
+	io-usb-dcd -d usbncm-omap543x-dwcotg3 ioport=0x4a030000,irq=124

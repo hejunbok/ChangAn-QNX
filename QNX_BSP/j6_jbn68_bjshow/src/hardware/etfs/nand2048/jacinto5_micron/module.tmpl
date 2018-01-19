@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<module name="fs-etfs-jacinto5_micron">
+	<type>Element</type>
+	<classification>Driver</classification>
+
+	<description>
+		<short>ETFS driver for Micron NAND flash device on Jacinto5 paltform</short>
+		<abstract>
+			<![CDATA[The fs-etfs-jacinto5_micron driver is a Micron NAND flash driver to support the ETFS file system for QNX Neutrino on the Jacinto5 board.]]>
+		</abstract>
+	</description>
+
+	<supports>
+		<!-- as this is a board specific variant, we will just list the
+			variant that is available ...  --> 
+		<availability>
+			<cpu isa="arm"><byteOrder>le</byteOrder></cpu>
+			<cpu isa="arm"><byteOrder>le.v7</byteOrder></cpu>
+		</availability>
+	</supports>
+
+	<source available="true">
+		<location type="">.</location>
+	</source>
+
+	<GroupOwner>hw</GroupOwner>
+
+	<RuntimeComponent>Neutrino RTOS</RuntimeComponent>
+
+	<contents>
+		<component id="jacinto5" generated="true">
+			<location basedir="{cpu}/{o|endian}"
+				 runtime="true">fs-etfs-jacinto5_micron</location>
+		</component>
+	</contents>
+
+	<requires>
+		<!-- libetfs && etfs.h should be part of the standard install -->
+	</requires>
+
+</module>

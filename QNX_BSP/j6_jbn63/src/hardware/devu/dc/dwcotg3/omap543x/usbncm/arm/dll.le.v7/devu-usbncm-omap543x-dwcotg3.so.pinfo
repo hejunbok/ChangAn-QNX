@@ -1,0 +1,10 @@
+STATE=stable
+INSTALLDIR=armle-v7/lib/dll/
+INSTALLNAME=devu-usbncm-omap543x-dwcotg3.so
+NAME=devu-usbncm-omap543x-dwcotg3.so
+USER=builder
+HOST=bsp1
+DATE=2015/01/29-09:24:16-EST
+VERSION=trunk
+TAGID=BSP_ti-j6-dra74x_vayu-evm_br-660_be-660_769386_63
+DESCRIPTION= Driver for Synopsys DesignWare SuperSpeed OTG peripheral controller.

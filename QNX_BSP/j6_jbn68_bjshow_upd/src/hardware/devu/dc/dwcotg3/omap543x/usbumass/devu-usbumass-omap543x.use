@@ -1,0 +1,16 @@
+%C Device Controller Driver for the DesignWare USB3.0 OTG controller. 
+
+Syntax:
+    io-usb-dcd -d  usbumass-omap543x-dwcotg3 [options]
+
+Options:
+    ioport=<addr>   register base address
+    irq=<num>       interrupt request number
+    verbose=<int>   set verbosity level to <int>
+    linkup          Assert "SOFT CONNECT".  Enables the target to be detected
+                    as soon as the device controller driver is loaded
+    linkdown        De-assert "SOFT-CONNECT".  The link must be manually 
+
+Examples: 
+
+    io-usb-dcd -d usbumass-omap543x-dwcotg3 ioport=0x4a030000,irq=124

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<module name="ipl-dra74xevm">
+  <classification>Driver</classification>
+  <description>
+    <short>Initial Program Loader for J6 EVM Platform Based</short>
+    <abstract><![CDATA[
+            The ipl-dra74xevm program is responsible for the first stage initialization of the DRA74X EVM Platform board, including initialization of the memory controller, and setting up a serial port for debug purposes. It then scans for a QNX IFS (Image File System) image, and copies that image to memory. Finally, it transfers control to the QNX startup-dra74xevm module, which is located at the beginning of the IFS image.
+        ]]></abstract>
+  </description>
+  <supports>
+    <availability>
+      <cpu isa="arm">
+        <byteOrder>le</byteOrder>
+      </cpu>
+    </availability>
+  </supports>
+  <contents>
+    <component id="ipl-dra74xevm" generated="true">
+      <location basedir="arm/le">ipl-dra74xevm</location>
+    </component>
+  </contents>
+  <requires>
+    <part rootMacro="LIBIPL_ROOT" build="true" location="hardware/ipl/lib"/>
+  </requires>
+</module>

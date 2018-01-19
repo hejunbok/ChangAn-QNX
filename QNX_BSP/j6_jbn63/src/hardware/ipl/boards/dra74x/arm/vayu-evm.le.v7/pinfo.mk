@@ -1,0 +1,3 @@
+define PINFO
+PINFO DESCRIPTION=arm TI DRA74X EVM Platform IPL
+endef

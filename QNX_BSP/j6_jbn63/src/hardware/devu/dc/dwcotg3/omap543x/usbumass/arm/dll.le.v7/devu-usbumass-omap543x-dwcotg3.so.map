@@ -1,0 +1,647 @@
+Archive member included because of file (symbol)
+
+/opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a(_udivsi3.o)
+                              dwcotg.o (__aeabi_uidiv)
+/opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a(_dvmd_nto.o)
+                              /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+LOAD /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtbegin.o
+LOAD cmd.o
+LOAD dwcotg.o
+LOAD event.o
+LOAD fifomem.o
+LOAD omap543x.o
+LOAD trb.o
+LOAD /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a
+LOAD /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/libc.so
+LOAD /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/libcS.a
+LOAD /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a
+LOAD /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtend.o
+LOAD /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crtn.o
+                0x000000f4                . = (0x0 + SIZEOF_HEADERS)
+
+.note.gnu.build-id
+                0x000000f4       0x20
+ *(.note.gnu.build-id)
+ .note.gnu.build-id
+                0x000000f4       0x20 linker stubs
+
+.hash
+ *(.hash)
+
+.gnu.hash       0x00000114      0x3b0
+ *(.gnu.hash)
+ .gnu.hash      0x00000114      0x3b0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+
+.dynsym         0x000004c4      0x980
+ *(.dynsym)
+ .dynsym        0x000004c4      0x980 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+
+.dynstr         0x00000e44      0xa86
+ *(.dynstr)
+ .dynstr        0x00000e44      0xa86 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+
+.gnu.version    0x000018ca        0x0
+ *(.gnu.version)
+ .gnu.version   0x00000000        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+
+.gnu.version_d  0x000018cc        0x0
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x00000000        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+
+.gnu.version_r  0x000018cc        0x0
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x00000000        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+
+.rel.dyn        0x000018cc      0x2c0
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ .rel.text      0x00000000        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
+ .rel.data.rel.ro.local
+                0x000018cc       0xb0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ .rel.data.rel  0x0000197c      0x148 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ .rel.data.rel.local
+                0x00001ac4       0x58 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ .rel.got       0x00001b1c       0x60 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ *(.rel.iplt)
+ .rel.iplt      0x00000000        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ .rel.init_array
+                0x00001b7c        0x8 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ .rel.fini_array
+                0x00001b84        0x8 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+
+.rela.dyn
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+ *(.rela.iplt)
+
+.rel.plt        0x00001b8c      0x150
+ *(.rel.plt)
+ .rel.plt       0x00001b8c      0x150 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+
+.rela.plt
+ *(.rela.plt)
+
+.init           0x00001cdc        0x8
+ *(SORT(.init))
+ .init          0x00001cdc        0x4 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+                0x00001cdc                _init
+ .init          0x00001ce0        0x4 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crtn.o
+
+.plt            0x00001ce4      0x214
+ *(.plt)
+ .plt           0x00001ce4      0x214 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+
+.iplt           0x00001ef8        0x0
+ *(.iplt)
+ .iplt          0x00000000        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+
+.text           0x00001ef8     0x2eb8
+                0x00001ef8                _btext = .
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x00001ef8        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ .text          0x00001ef8      0x114 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtbegin.o
+ .text          0x0000200c      0x318 cmd.o
+                0x0000200c                epcmd_build_DEPSTARTCFG
+                0x00002022                epcmd_build_DEPCFG
+                0x00002082                epcmd_build_DEPSTRTXFER
+                0x00002096                epcmd_build_DEPENDXFER
+                0x000020a8                epcmd_build_DEPXFERCFG
+                0x000020b8                epcmd_build_DEPSETSTALL
+                0x000020c8                epcmd_build_DEPCSTALL
+                0x000020d8                epcmd_send
+                0x00002258                dgcmd_build_FIFO_ALL_FLUSH
+                0x00002266                dgcmd_build_SETPERI_PARAM
+                0x00002270                dgcmd_send
+ *fill*         0x00002324        0x4 
+ .text          0x00002328     0x1a18 dwcotg.o
+                0x00002328                dwcotg_clear_device_feature
+                0x00002366                dwcotg_control_endpoint_enable
+                0x00002370                dwcotg_control_endpoint_disable
+                0x00002374                dwcotg_start
+                0x00002378                dwcotg_stop
+                0x0000237c                dwcotg_slogf
+                0x00002440                dwcotg_isoch_transfer
+                0x00002460                dwcotg_isoch_transfer_abort
+                0x00002480                dwcotg_isoch_endpoint_disable
+                0x000024a0                dwcotg_endpoint_disable
+                0x00002528                dwcotg_isoch_endpoint_enable
+                0x00002548                dwcotg_endpoint_enable
+                0x000026fc                dwcotg_get_descriptor
+                0x00002834                dwcotg_set_sel
+                0x00002894                dwcotg_clear_endpoint_state
+                0x000029b4                dwcotg_select_configuration
+                0x00002a68                dwcotg_interrupt
+                0x00002b8c                dwcotg_xfer_start
+                0x00002c7c                dwcotg_transfer
+                0x00002d24                dwcotg_control_transfer
+                0x00002e5c                dwcotg_set_device_address
+                0x00002ec8                dwcotg_setup_packet_get
+                0x00002f08                dwcotg_control_transfer_abort
+                0x00002f60                dwcotg_set_endpoint_state
+                0x000030b4                dwcotg_xfer_abort
+                0x00003140                dwcotg_transfer_abort
+                0x0000318c                dwcotg_disconnect
+                0x00003228                dwcotg_set_bus_state
+                0x00003256                dwcotg_set_test_mode
+                0x000032ac                dwcotg_set_device_feature
+                0x0000330a                ep0_cfg
+                0x00003574                ep0_decfg
+                0x000035a0                dwcotg_process_args
+                0x00003740                dwcotg_init
+                0x00003cc2                destroy_delayed_execution_handler
+                0x00003ce2                dwcotg_shutdown
+ .text          0x00003d40      0x720 event.o
+                0x00003d7c                event_process
+                0x000042cc                event_decode
+ .text          0x00004460      0x284 fifomem.o
+                0x00004460                log2_roundup
+                0x0000447a                fifomem_init
+                0x0000450c                fifomem_fini
+                0x00004510                fifomem_alloc
+                0x000045b0                fifomem_free
+                0x000046d8                fifomem_alloc_ep0
+                0x000046e0                fifomem_free_ep0
+ *fill*         0x000046e4        0x4 
+ .text          0x000046e8      0x360 omap543x.o
+                0x000046e8                map_regs
+                0x0000488c                unmap_regs
+                0x000048d4                phy_config
+                0x00004900                dwcotg_custom_init1
+                0x00004984                dwcotg_custom_init2
+                0x000049d0                dwcotg_custom_fini1
+                0x000049e4                dwcotg_custom_fini2
+                0x00004a18                dwcotg_custom_reset
+                0x00004a1c                dwcotg_phy_in_reset
+ .text          0x00004a48      0x154 trb.o
+                0x00004a48                trb_cluster_alloc
+                0x00004b28                trb_cluster_free
+                0x00004b42                trb_build_ctrl_setup
+                0x00004b54                trb_build_ctrl_data
+                0x00004b66                trb_build_ctrl_status2
+                0x00004b78                trb_build_ctrl_status3
+                0x00004b8a                trb_build_normal
+ .text          0x00004b9c      0x20c /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a(_udivsi3.o)
+                0x00004b9c                __udivsi3
+                0x00004b9c                __aeabi_uidiv
+                0x00004d88                __aeabi_uidivmod
+ .text          0x00004da8        0x8 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a(_dvmd_nto.o)
+                0x00004da8                __aeabi_ldiv0
+                0x00004da8                __div0
+                0x00004da8                __aeabi_idiv0
+ .text          0x00004db0        0x0 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtend.o
+ .text          0x00004db0        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crtn.o
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+ *(.v4_bx)
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.fini           0x00004db0        0x8
+ *(SORT(.fini))
+ .fini          0x00004db0        0x4 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+                0x00004db0                _fini
+ .fini          0x00004db4        0x4 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crtn.o
+                0x00004db8                PROVIDE (__etext, .)
+                0x00004db8                PROVIDE (_etext, .)
+                0x00004db8                PROVIDE (etext, .)
+
+.rodata         0x00004db8     0x1bbc
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x00004db8       0x16 cmd.o
+ .rodata.str1.1
+                0x00004dce      0x136 cmd.o
+ .rodata        0x00004f04      0x331 dwcotg.o
+                0x000051a7                usbdc_bos_descriptor
+ .rodata.str1.1
+                0x00005235      0xea3 dwcotg.o
+ .rodata        0x000060d8       0xb6 event.o
+ .rodata.str1.1
+                0x0000618e      0x638 event.o
+                                0x6d4 (size before relaxing)
+ .rodata        0x000067c6       0x28 fifomem.o
+ .rodata.str1.1
+                0x000067ee       0x27 fifomem.o
+ .rodata        0x00006815       0x1d omap543x.o
+ .rodata.str1.1
+                0x00006832       0x9a omap543x.o
+ .rodata        0x000068cc       0x12 trb.o
+ .rodata.str1.1
+                0x000068de       0x96 trb.o
+
+.rodata1
+ *(.rodata1)
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x00006974                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00006974                __exidx_end = .
+
+.eh_frame_hdr   0x00006974        0x0
+ *(.eh_frame_hdr)
+ .eh_frame_hdr  0x00000000        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crtn.o
+
+.eh_frame       0x00006974        0x4
+ *(.eh_frame)
+ .eh_frame      0x00006974        0x0 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtbegin.o
+ .eh_frame      0x00006974        0x4 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtend.o
+
+.note           0x00006978       0x18
+ .note          0x00006978       0x18 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crtn.o
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+                0x00006990                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
+                0x00007ec4                . = DATA_SEGMENT_ALIGN (0x1000, 0x1000)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array
+ *(.preinit_array)
+
+.init_array     0x00007ec4        0x4
+ *(SORT(.init_array.*))
+ *(.init_array)
+ .init_array    0x00007ec4        0x4 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtbegin.o
+
+.fini_array     0x00007ec8        0x4
+ *(SORT(.fini_array.*))
+ *(.fini_array)
+ .fini_array    0x00007ec8        0x4 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtbegin.o
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr            0x00007ecc        0x4
+ *(.jcr)
+ .jcr           0x00007ecc        0x0 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtbegin.o
+ .jcr           0x00007ecc        0x4 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtend.o
+
+.data.rel.ro    0x00007ed0       0x58
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ .data.rel.ro.local
+                0x00007ed0       0x10 dwcotg.o
+ .data.rel.ro.local
+                0x00007ee0       0x48 event.o
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic        0x00007f28       0xd8
+ *(.dynamic)
+ .dynamic       0x00007f28       0xd8 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+                0x00007f28                _DYNAMIC
+                0x00008000                . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.got            0x00008000       0xe4
+ *(.got.plt)
+ .got.plt       0x00008000       0xb4 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+                0x00008000                _GLOBAL_OFFSET_TABLE_
+ *(.igot.plt)
+ .igot.plt      0x00000000        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ *(.got)
+ .got           0x000080b4       0x30 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ *(.igot)
+
+.data           0x000080e4      0x180
+                0x000080e4                __data_start = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x000080e4        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ .data          0x000080e4        0x0 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtbegin.o
+ .data.rel      0x000080e4        0x4 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtbegin.o
+                0x000080e4                __dso_handle
+ .data          0x000080e8        0x0 cmd.o
+ .data          0x000080e8       0x6c dwcotg.o
+                0x000080e8                usbdc_ss_config_descriptor_0
+                0x00008114                usbdc_hs_config_descriptor_0
+                0x00008134                usbdc_fs_config_descriptor_0
+ .data.rel.local
+                0x00008154       0x30 dwcotg.o
+ .data.rel      0x00008184       0xe0 dwcotg.o
+                0x00008184                io_usb_dll_entry
+                0x000081a4                dwcotg_usb_controller_methods
+                0x000081b4                dwcotg_controller_methods
+                0x00008208                usbdc_ss_config_descriptor
+                0x0000820c                usbdc_hs_config_descriptor
+                0x00008210                usbdc_fs_config_descriptor
+ .data          0x00008264        0x0 event.o
+ .data          0x00008264        0x0 fifomem.o
+ .data          0x00008264        0x0 omap543x.o
+ .data          0x00008264        0x0 trb.o
+ .data          0x00008264        0x0 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a(_udivsi3.o)
+ .data          0x00008264        0x0 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a(_dvmd_nto.o)
+ .data          0x00008264        0x0 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtend.o
+ .data          0x00008264        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crtn.o
+
+.tm_clone_table
+                0x00008264        0x0
+ .tm_clone_table
+                0x00008264        0x0 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtbegin.o
+ .tm_clone_table
+                0x00008264        0x0 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtend.o
+
+.data1
+ *(.data1)
+                0x00008264                _edata = .
+                0x00008264                PROVIDE (edata, .)
+                0x00008264                . = .
+                0x00008264                __bss_start = .
+                0x00008264                __bss_start__ = .
+
+.bss            0x00008264       0x20
+ *(.dynbss)
+ .dynbss        0x00000000        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x00008264        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ .bss           0x00008264       0x1c /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtbegin.o
+ .bss           0x00008280        0x0 cmd.o
+ .bss           0x00008280        0x0 dwcotg.o
+ .bss           0x00008280        0x0 event.o
+ .bss           0x00008280        0x0 fifomem.o
+ .bss           0x00008280        0x4 omap543x.o
+                0x00008280                platform_t
+ .bss           0x00008284        0x0 trb.o
+ .bss           0x00008284        0x0 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a(_udivsi3.o)
+ .bss           0x00008284        0x0 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a(_dvmd_nto.o)
+ .bss           0x00008284        0x0 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtend.o
+ .bss           0x00008284        0x0 /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crtn.o
+ *(COMMON)
+                0x00008284                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x00008284                _bss_end__ = .
+                0x00008284                __bss_end__ = .
+                0x00008284                . = ALIGN (0x4)
+                0x00008284                . = SEGMENT_START ("ldata-segment", .)
+                0x00008284                . = ALIGN (0x4)
+                0x00008284                __end__ = .
+                0x00008284                _end = .
+                0x00008284                PROVIDE (end, .)
+                0x00008284                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x11
+ *(.comment)
+ .comment       0x00000000       0x11 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtbegin.o
+                                 0x12 (size before relaxing)
+ .comment       0x00000000       0x12 cmd.o
+ .comment       0x00000000       0x12 dwcotg.o
+ .comment       0x00000000       0x12 event.o
+ .comment       0x00000000       0x12 fifomem.o
+ .comment       0x00000000       0x12 omap543x.o
+ .comment       0x00000000       0x12 trb.o
+ .comment       0x00000000       0x12 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtend.o
+
+.ARM.attributes
+                0x00000000       0x2f
+ .ARM.attributes
+                0x00000000       0x1f /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crti.o
+ .ARM.attributes
+                0x0000001f       0x33 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtbegin.o
+ .ARM.attributes
+                0x00000052       0x33 cmd.o
+ .ARM.attributes
+                0x00000085       0x33 dwcotg.o
+ .ARM.attributes
+                0x000000b8       0x33 event.o
+ .ARM.attributes
+                0x000000eb       0x33 fifomem.o
+ .ARM.attributes
+                0x0000011e       0x33 omap543x.o
+ .ARM.attributes
+                0x00000151       0x33 trb.o
+ .ARM.attributes
+                0x00000184       0x21 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x000001a5       0x21 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a(_dvmd_nto.o)
+ .ARM.attributes
+                0x000001c6       0x33 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//crtend.o
+ .ARM.attributes
+                0x000001f9       0x1f /opt/qnxplatform6.6/target/qnx6/armle-v7/lib/crtn.o
+
+.ident          0x00000000     0x1961
+ .ident         0x00000000     0x154b cmd.o
+                               0x238b (size before relaxing)
+ .ident         0x0000154b      0x21e dwcotg.o
+                               0x2659 (size before relaxing)
+ .ident         0x00001769       0x60 event.o
+                               0x238d (size before relaxing)
+ .ident         0x000017c9       0x62 fifomem.o
+                               0x2441 (size before relaxing)
+ .ident         0x0000182b       0xd8 omap543x.o
+                               0x25b1 (size before relaxing)
+ .ident         0x00001903       0x5e trb.o
+                               0x238b (size before relaxing)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0xc0
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 cmd.o
+ .debug_aranges
+                0x00000020       0x20 dwcotg.o
+ .debug_aranges
+                0x00000040       0x20 event.o
+ .debug_aranges
+                0x00000060       0x20 fifomem.o
+ .debug_aranges
+                0x00000080       0x20 omap543x.o
+ .debug_aranges
+                0x000000a0       0x20 trb.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0xc9de
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000     0x146f cmd.o
+ .debug_info    0x0000146f     0x619a dwcotg.o
+ .debug_info    0x00007609     0x1c05 event.o
+ .debug_info    0x0000920e     0x1182 fifomem.o
+ .debug_info    0x0000a390     0x16b0 omap543x.o
+ .debug_info    0x0000ba40      0xf9e trb.o
+
+.debug_abbrev   0x00000000     0x1566
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x2f6 cmd.o
+ .debug_abbrev  0x000002f6      0x592 dwcotg.o
+ .debug_abbrev  0x00000888      0x397 event.o
+ .debug_abbrev  0x00000c1f      0x358 fifomem.o
+ .debug_abbrev  0x00000f77      0x374 omap543x.o
+ .debug_abbrev  0x000012eb      0x27b trb.o
+
+.debug_line     0x00000000     0x1db5
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x00000000      0x42f cmd.o
+ .debug_line    0x0000042f      0xb52 dwcotg.o
+ .debug_line    0x00000f81      0x3e2 event.o
+ .debug_line    0x00001363      0x38e fifomem.o
+ .debug_line    0x000016f1      0x3fc omap543x.o
+ .debug_line    0x00001aed      0x2c8 trb.o
+
+.debug_frame    0x00000000      0x818
+ *(.debug_frame)
+ .debug_frame   0x00000000       0xf8 cmd.o
+ .debug_frame   0x000000f8      0x460 dwcotg.o
+ .debug_frame   0x00000558       0x78 event.o
+ .debug_frame   0x000005d0       0xb0 fifomem.o
+ .debug_frame   0x00000680       0xdc omap543x.o
+ .debug_frame   0x0000075c       0x9c trb.o
+ .debug_frame   0x000007f8       0x20 /opt/qnxplatform6.6/host/linux/x86/usr/lib/gcc/arm-unknown-nto-qnx6.6.0eabi/4.7.3/pic//libgcc.a(_udivsi3.o)
+
+.debug_str      0x00000000     0x2066
+ *(.debug_str)
+ .debug_str     0x00000000      0x9f0 cmd.o
+                                0xa95 (size before relaxing)
+ .debug_str     0x000009f0     0x123d dwcotg.o
+                               0x1e07 (size before relaxing)
+ .debug_str     0x00001c2d      0x18e event.o
+                                0xc9e (size before relaxing)
+ .debug_str     0x00001dbb      0x11e fifomem.o
+                                0xa33 (size before relaxing)
+ .debug_str     0x00001ed9      0x110 omap543x.o
+                                0xb07 (size before relaxing)
+ .debug_str     0x00001fe9       0x7d trb.o
+                                0x9c8 (size before relaxing)
+
+.debug_loc      0x00000000     0x552a
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x6cd cmd.o
+ .debug_loc     0x000006cd     0x3524 dwcotg.o
+ .debug_loc     0x00003bf1      0xac1 event.o
+ .debug_loc     0x000046b2      0x575 fifomem.o
+ .debug_loc     0x00004c27      0x7b9 omap543x.o
+ .debug_loc     0x000053e0      0x14a trb.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x00000000      0x460
+ *(.debug_ranges)
+ .debug_ranges  0x00000000      0x138 cmd.o
+ .debug_ranges  0x00000138      0x2a8 dwcotg.o
+ .debug_ranges  0x000003e0       0x50 event.o
+ .debug_ranges  0x00000430       0x30 omap543x.o
+
+.debug_macro
+ *(.debug_macro)
+
+.stack          0x00080000        0x0
+                0x00080000                _stack = .
+ *(.stack)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(/builds/workspace/BSP_ti-j6-dra74x_vayu-evm_br-660_be-660/code/hardware/devu/dc/dwcotg3/omap543x/usbumass/arm/dll.le.v7/devu-usbumass-omap543x-dwcotg3.so elf32-littlearm)

@@ -1,0 +1,53 @@
+%C [general_opts] protocol* [protocol_opts]* device* [device_opts]*
+
+Input Manager for  Atmel mXT224 I2C Touch screen Controller
+
+General opts:
+ -P disable photon interface (default start Photon interface)
+ -r start resource manager interface (only use if not using Photon)
+ -b prevent CASB exit    (default allow CASB)
+ -d device               (default /dev/photon | PHOTON env var)
+ -G 			 		 Presence of grafx driver is not required when 
+ 						 starting up a touchscreen driver; useful in debug mode
+ -g input group          (default 1)
+ -v increment verbosity  (default 0)
+ -l list                 List the internal modules.  Modules are listed in
+                         the following format:
+
+                           module name | date last compiled | revision | class
+                           where: class is comprised of (D)evice and/or 
+                                  (P)rotocol and/or (F)ilter
+ -R specify display resolution (e.g. -R800,480)- bypasses calls to libgf to
+    determine resolution
+
+Device/protocol modules and the options:
+
+touch		Touchscreen device/protocol module for mxt224 controller
+  -v               Verbosity, added v's means more verbosity.
+  -i irq        Touchscreen IRQ (default 0x31F)
+  -a addr		mxt224 I2C slave address (default 0x4A)
+  -p pathname	     Pathname of I2C device (default /dev/i2c0)
+  -P priority      Pulse priority for the interrupt handling thread (default 21).
+   -t               Touch threshold pressure (default 100)      
+   -r               Touch x,y coordinates 180 degree rotated
+Filter modules and their options:
+
+ abs               Transform and compresses absolute coordinate "touch" events
+  -b               Touching the screen is a right mouse button (default left)
+  -c               Calibrate mode - don't transform coordinates
+  -f filename      Calibration file name
+  -o x,y           Origin of display region (default, origin of graphics region)
+  -s x,y           Coordinates of lower right corner of display region
+                   (default, width and height of graphics region)
+  -x               Reverse X
+  -y               Reverse Y
+
+Example
+--------
+Invoke the Touchscreen driver for mxt224 as follows:
+
+devi-mxt224 -P -r -R800,480 -v touch
+
+Starts the Touchscreen driver with Resource Manager interface
+by disabling the Photon interface.
+

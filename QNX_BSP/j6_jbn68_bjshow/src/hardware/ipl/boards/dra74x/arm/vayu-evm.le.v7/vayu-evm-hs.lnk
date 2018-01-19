@@ -1,0 +1,64 @@
+TARGET(elf32-littlearm)
+OUTPUT_FORMAT(elf32-littlearm)
+ENTRY(_start)
+
+MEMORY
+{
+	/* 
+	 * In order to boot HS devices, the IPL needs to be signed.
+	 * The certificate is 0x350 bytes, which is prepended to the IPL and hence we need to carve out this space.
+	 */
+	ram :	ORIGIN = 0x40300350,	LENGTH = 0x14000
+
+	/* TLB table must be align to 16K (0x4000) */
+	tlb :	ORIGIN = 0x40314000, LENGTH = 0x4000
+
+	/* dedicated for non-cacheble buffer */
+	scratch :	ORIGIN = 0x80000000,	LENGTH = 0x100000
+}
+
+SECTIONS
+{
+	.text : {
+			_start.o(.text)
+			*(.text)
+			*(.rodata*)
+			*(.glue_7)
+			*(.glue_7t)
+	} > ram
+
+	.note.gnu.build-id : {
+			*(.note.gnu.build-id)
+	} > ram
+	_etext = .;
+
+	.data : {
+			*(.data)
+			*(.sdata)
+	} > ram
+	_edata = .;
+
+	/*
+	 * The .bss.dummy section needs to be placed at the beginning of .bss
+	 * and right after the .data,
+	 * in order to protect the _TI_ROM_r0 from being overwritten
+	 * when loading IPL from NOR
+	 */
+	.bss : {
+			*(.bss.dummy)
+			*(.bss)
+			*(.sbss)
+	} > ram
+
+	.stack : {
+		*.(*)
+	} > ram
+
+	.tlb : {
+		*(.tlb);
+	} > tlb
+
+	.scratch : {
+		*(.scratch);
+	} > scratch
+}

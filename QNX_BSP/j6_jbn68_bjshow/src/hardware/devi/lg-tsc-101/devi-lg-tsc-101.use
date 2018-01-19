@@ -1,0 +1,57 @@
+%C [general_opts] protocol* [protocol_opts]* device* [device_opts]*
+
+Input Manager for LG LP101WX2-SLA1 I2C Touch screen Controller.
+This controller, under the covers has a LDC3001 ROIC and a LGD STM32F103 MCU. 
+It is multi-touch capable  and can tracking up to ten touches simultenously. 
+The firmare for the MCU fetches data from the ROIC over SPI. A
+fter proccessing, the controller passes on the tocuh information via an 
+I2C interface.
+
+General opts:
+ -P disable photon interface (default start Photon interface)
+ -r start resource manager interface (only use if not using Photon)
+ -b prevent CASB exit    (default allow CASB)
+ -d device               (default /dev/photon | PHOTON env var)
+ -G 			 		 Presence of grafx driver is not required when
+ 						 starting up a touchscreen driver; useful in debug mode
+ -g input group          (default 1)
+ -v increment verbosity  (default 0)
+ -l list                 List the internal modules.  Modules are listed in
+                         the following format:
+                           module name | date last compiled | revision | class
+                           where: class is comprised of (D)evice and/or
+                                  (P)rotocol and/or (F)ilter
+ -R specify display resolution (e.g. -R1280,800)- bypasses calls to libgf to
+    determine resolution
+
+
+Device/protocol modules and the options:
+
+touch		Touchscreen device/protocol module for LG controller
+  -v            Verbosity, added v's means more verbosity.
+  -i irq        Touchscreen IRQ (default is 0x3D shared line of GPIO1 since TouchIRQ is connected to GPIO1 pin 2)
+  -a addr		I2C slave address (default 0x18)
+  -p pathname	Pathname of I2C device (default /dev/i2c0)
+  -P priority   Pulse priority for the interrupt handling thread (default 21)
+  -r            Touch x,y coordinates 180 degree rotated
+
+Filter modules and their options:
+ abs               Transform and compresses absolute coordinate "touch" events
+  -b               Touching the screen is a right mouse button (default left)
+  -c               Calibrate mode - don't transform coordinates
+  -f filename      Calibration file name
+  -o x,y           Origin of display region (default, origin of graphics region)
+  -s x,y           Coordinates of lower right corner of display region
+                   (default, width and height of graphics region)
+  -x               Reverse X
+  -y               Reverse Y
+
+Example
+--------
+Invoke the Touchscreen driver for LG-TSC as follows:
+
+devi-lg-tsc-101 -vvvvv -P -r -R1280,800 touch -j 1000 -k 120
+
+Starts the Touchscreen driver with Resource Manager interface
+by disabling the Photon interface.
+

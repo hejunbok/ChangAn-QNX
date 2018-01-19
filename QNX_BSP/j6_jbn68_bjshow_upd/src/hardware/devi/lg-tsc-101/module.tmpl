@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<module name="devi-lg-tsc-101">
+  <classification>Driver</classification>
+  <description>
+    <short>Photon Input Manager for LG LP101 Touchscreen controller</short>
+    <abstract>
+      <![CDATA[
+        The devi-lg-tsc-101 is a Photon input manager for the TI LG LP101 Touchscreen controllers.
+      ]]>
+    </abstract>
+  </description>
+  <supports>
+    <availability>
+      <cpu isa="arm">
+        <byteOrder>le</byteOrder>
+      </cpu>
+    </availability>
+  </supports>
+  <contents>
+    <component id="lg-tsc-101" generated="true">
+      <location basedir="{os}/{cpu}/{endian}" runtime="true">devi-lg-tsc-101</location>
+    </component>
+  </contents>
+  <requires>
+    <part build="false" location="hardware/devi"/>
+    <part build="true" rootMacro="DEVILIB_ROOT" location="hardware/devi/lib"/>
+    <part build="true" rootMacro="KEYMAP_ROOT" location="hardware/devi/keymap"/>
+  </requires>
+</module>
